@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    
+
+    <!--MUI引入-->
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../lib/mui/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/mui/css/mui.picker.min.css" />
+
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="../css/base.less">
+    <link rel="stylesheet/less" href="../css/trainAudit.less">
+    <link rel="stylesheet/less" href="../css/trainApply.less">
+    <style>
+        h5.mui-content-padded {
+            margin-left: 3px;
+            margin-top: 20px !important;
+        }
+
+        h5.mui-content-padded:first-child {
+            margin-top: 12px !important;
+        }
+
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+    </style>
+
+
+    <!-- 编译less文件的js -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <h3>培训审核</h3>
+    </header>
+    <ul class="flow">
+        <li>
+            <span class="circle checked">1</span>
+            <span>提交申请</span>
+        </li>
+        <li>
+            <span class="circle">2</span>
+            <span>资质审核</span>
+        </li>
+        <li>
+            <span class="circle">3</span>
+            <span>确定方案</span>
+        </li>
+        <li>
+            <span class="circle">4</span>
+            <span>培训计划</span>
+        </li>
+        <li class="last">
+            <span class="circle">5</span>
+            <span>意见反馈</span>
+        </li>
+    </ul>
+    <div class="main">
+        <div class="frame">
+            <h3>培训申请信息</h3>
+            <div class="reminder">
+                <span>第1步：经销商提交培训申请</span><br>
+                <span>第2步：大区进行资质审核</span><br>
+                <span>第3步：教研部进行方案确认</span><br>
+                <span>第4步：培训讲师制定具体计划</span><br>
+                <span>第5步：培训方对培训提供意见反馈</span><br>
+            </div>
+            <form class="applyForm" id="applyForm">
+                <div class="submit">
+                    <div class="apply">
+                        <span>申请编号：</span>
+                        <span>452221112332111232</span>
+                    </div>
+                    <div class="lr">
+                        <span class="fl">培训时间：</span>
+                        <div class="right trainTime">
+                            <button id='start' data-options='{"type":"date"}' class="btn mui-btn mui-btn-block mybtn">
+                                <div id='result0' class="ui-alert myalert">2017年12月12日</div>
+                            </button>
+                            <span class="line"></span>
+                            <button id='end' data-options='{"type":"date"}' class="btn mui-btn mui-btn-block mybtn">
+                                <div id='result1' class="ui-alert myalert">2017年12月12日</div>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="lr fate">
+                        <span class="fl">培训天数：</span>
+                        <div class="right">
+                            <select>
+                            <option value="365">365</option>
+                            <option value="364">364</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="lr object">
+                        <span class="fl">培训科目：</span>
+                        <div class="right">
+                            <ul class="pitch clearfix" id="delete">
+                                <li>
+                                    <a href="javascript:void(0)">狮王英语</a>
+                                    <em>x</em>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">狮王英语</a>
+                                    <em>x</em>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">狮王英语</a>
+                                    <em>x</em>
+                                </li>
+                                <li class="add">
+                                    <em id="add">+</em>
+                                </li>
+                            </ul>
+
+                            <ul class="option clearfix" id="option">
+                                <li>
+                                    <a href="javascript:void(0)">汇海蒙数</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">幼儿英语</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">幼儿英语</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">幼儿英语</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lr type">
+                        <span class="fl">培训类型：</span>
+                        <div class="right">
+                            <select>
+                            <option value="大会1">大会1</option>
+                            <option value="大会2">大会2</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="lr explain">
+                        <span class="fl">详细说明：</span>
+                        <div class="right">
+                            <textarea rows="" cols="" placeholder="具体要求说明"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">提交</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../js/trainAudit.js"></script>
+
+    <!--时间选择模块-->
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/mui/js/mui.picker.min.js"></script>
+    <script>
+        (function ($) {
+            $.init();
+            var result0 = $('#result0')[0];
+            var result1 = $('#result1')[0];
+            var btns = $('.btn');
+            btns.each(function (i, btn) {
+                btn.addEventListener('tap', function () {
+                    var optionsJson = this.getAttribute('data-options') || '{}';
+                    var options = JSON.parse(optionsJson);
+                    var id = this.getAttribute('id');
+                    /*
+                     * 首次显示时实例化组件
+                     * 示例为了简洁，将 options 放在了按钮的 dom 上
+                     * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                     */
+                    var picker = new $.DtPicker(options);
+                    picker.show(function (rs) {
+                        /*
+                         * rs.value 拼合后的 value
+                         * rs.text 拼合后的 text
+                         * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                         * rs.m 月，用法同年
+                         * rs.d 日，用法同年
+                         * rs.h 时，用法同年
+                         * rs.i 分（minutes 的第二个字母），用法同年
+                         */
+                        if (id === 'start') {
+                            result0.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
+                                '日';
+                        } else {
+                            result1.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
+                                '日';
+                        }
+                        /* 
+                         * 返回 false 可以阻止选择框的关闭
+                         * return false;
+                         */
+                        /*
+                         * 释放组件资源，释放后将将不能再操作组件
+                         * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                         * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                         * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                         */
+                        picker.dispose();
+                    });
+                }, false);
+            });
+        })(mui);
+    </script>
+
+    <!--培训科目选择模块-->
+
+</body>
+
+</html>

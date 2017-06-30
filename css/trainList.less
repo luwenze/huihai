@@ -1,0 +1,152 @@
+.sort{
+    height: 32px;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(233,233,233);
+    >li{
+        float: left;
+        height: 31px;
+        width: 25%;
+        text-align: center;
+        >a{
+            display: inline-block;
+            font-size: 10px;
+            color: #565656;
+            padding: 9px 5px;
+        }
+        >a.checked{
+            border-bottom:2px solid rgb(4,166,193);
+        }
+    }
+}
+
+
+.list{
+    padding: 0 4px;
+    >.applyList{
+        padding-top: 2px;
+        width: 100%;
+        min-height: 150px;
+        >li{
+            position: relative;
+            margin-top: 8px;
+            width: 100%;
+            height: 106px;
+            background-color: #fff;
+            border: 1px solid rgb(4,166,193);
+            border-radius: 8px;
+            overflow: hidden;
+            >a{
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                left: 0px;
+            }
+            >.fl{
+                width: 33px;
+                height: 100%;
+                background-color: rgb(4,166,193);
+                position: relative;
+                >.time{
+                    min-height: 60px;
+                    position: absolute;
+                    color: #fff;
+                    top: 50%;
+                    margin-top: -30px;
+                    >div{
+                        width: 33px;
+                        text-align: center;                        
+                        >.date{
+                            font-size: 16px;
+                            padding: 4px 0;
+                        }
+                        >.month{
+                            display: block;
+                            font-size:10px;
+                            -webkit-transform:scale(0.8);
+                            margin-top: 6px;
+                            position: relative;
+                        }
+                        .month::before{
+                            content: '';
+                            width: 100%;
+                            height: 2px;
+                            position: absolute;
+                            background-color: #fff;
+                            bottom: -6px;
+                            left: 0px;
+                        }
+                        >.year{
+                            display: block;
+                            font-size:10px;
+                            -webkit-transform:scale(0.8);
+                            margin-top: 6px; 
+                                                                                 
+                        }
+                    }
+                }
+            }
+            >.right{
+                width: 100%;
+                padding-left: 23px;
+                padding-right: 2px;
+                height: 100%;
+                color: rgb(89,89,89);
+                position: relative;
+                >.number{
+                    height: 24px;
+                    font-size: 10px;
+                    line-height: 24px;
+                    >span{
+                        color: rgb(4,166,193);
+                    }
+                    >#state0{
+                        float: right;
+                        color: #d42121;
+                    }
+                    >#state1{
+                        float: right;
+                        color: rgb(4,166,193);
+                    }
+                    >#state2{
+                        float: right;
+                        color: #048F5C;
+                    }
+                    >#state3{
+                        float: right;
+                        color: #B3B3B3;
+                    }
+                }
+                >.area{
+                    font-size: 10px;
+                    height: 21px;
+                    line-height: 21px;
+                }
+                
+                >.project{
+                    >div{
+                        font-size: 10px;
+                        height: 15px;
+                        line-height: 18px;
+                    }   
+                    >.right{
+                        padding-left: 51px;
+                        >.two{
+                            padding-left: 10px;
+                            }
+                        
+                    }                 
+                }
+                .people{
+                    position: absolute;
+                    bottom: 6px;
+                    left: 33px;
+                    span{
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+
+// flow部分
+.flow{
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    padding-top: 9px;
+    padding-bottom: 5px;
+    border-top: 1px solid #E0F2F6;
+    border-bottom: 1px solid #DFDFDF;
+    >li{
+        position: relative;        
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        float: left;
+        >span{
+            display: block;
+            font-size: 9px;
+            height: 18px;
+            line-height: 18px;
+            color: #565656;
+        }
+        >.circle{
+            width: 18px;
+            height: 18px;
+            line-height: 15px;
+            border-radius: 9px;
+            margin: 0 auto;
+            color: rgb(4,166,193);
+            background-color: #fff;
+            border: 1px solid rgb(4,166,193);
+        }
+        >.circle.checked{
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            margin: 0 auto;
+            color: #fff;
+            background-color: rgb(4,166,193);
+        }
+
+    }
+    >li::before{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 64%;
+            top: 8px;
+            width: 72%;
+            height: 1px;
+            background-color: rgb(4,166,193);
+        }
+    >.last::before{
+        display: none;
+    }
+}
+
+
+// module部分
+.module{
+    padding: 10px 10px 0 10px;
+    >ul{
+        display: block;
+        width: 100%;
+        >li{
+            border-radius: 12px;
+            border: 1px solid rgb(4,166,193);
+            overflow: hidden;
+            background-color: #fff;
+            margin-bottom: 9px;
+            >h3{
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0 10px;
+                font-size: 10px;
+                height: 28px;
+                line-height: 28px;
+                color: #fff;
+                background-color: rgb(4,166,193);
+                >.edit{
+                    position: relative;
+                    >img{
+                        position: absolute;
+                        top: 5px;
+                        right: 2px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+            >.submit{
+                padding: 0 10px;
+                >div{
+                    width: 100%;
+                    height: 25px;
+                    line-height: 22px;
+                    border-bottom: 1px solid #F2F2F2;
+                    >span{
+                        font-size: 10px;
+                        color: #565656;
+                    }
+                    >.tel{
+                        display: inline-block;
+                        width: 17px;
+                        height: 17px;
+                        >img{
+                            width: 17px;
+                            height: 17px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                >.lr{
+                    position: relative;
+                    padding-left: 60px;
+                    height: 53px;
+                    >.fl{
+                        position: absolute;
+                        width: 60px;
+                        height: 100%;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    .right{
+                        width: 100%;
+                        font-size: 10px;
+                        color: #565656;
+                    }
+                }
+                >.time{
+                    margin-top: 15px;
+                    margin-bottom: 3px;
+                    border: none;
+                    >.alarm{
+                        width: 10px;
+                        height: 10px;
+                        >img{
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                    >span{
+                        height: 18px;
+                        line-height: 18px;
+                        font-size: 10px;
+                        transform: scale(0.9);
+                    }
+                }
+            }
+        }
+    }
+    >.gray{
+        >li{
+            border: 1px solid #B3B3B3;
+            border-radius: 12px;
+            >h3{
+                height: 29px;
+                padding: 0 10px;
+                background-color: #B3B3B3;                
+            }
+            >div{
+                padding: 9px 10px 15px 10px;
+                >img{
+                    width: 38px;
+                }
+                >span{
+                    font-size: 10px;
+                    color: #B3B3B3;
+                }
+            }
+        }
+    }
+}
+
