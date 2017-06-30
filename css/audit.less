@@ -1,0 +1,116 @@
+.msgList{
+    background-color: #fff;
+    >h3{
+        padding-left: 33px;
+        position: relative;
+        height: 30px;
+        >em{
+            position: absolute;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-repeat: no-repeat;
+            background-size: 15px 15px;
+            top: 6px;
+            left: 15px;
+
+        }
+        >em.applyman{
+            background-image: url('../images/applyman.png');
+        }
+        >em.applylist{
+            background-image: url('../images/apply-list.png');
+        }
+        >span{
+            font-size: 12px;
+            color: #565656;
+            line-height: 29px;
+            
+        }
+    }
+    >h3+h3{
+        border-top: 1px solid #F2F2F2;
+    }
+
+    .mui-table h4,.mui-table h5,.mui-table .mui-h5,.mui-table .mui-h6,.mui-table p{
+        margin-top: 0;
+    }
+    .mui-table h4{
+        line-height: 21px;
+        font-weight: normal;
+        color: #565656;
+        font-size: 15px;
+    }
+    .mui-table .oa-icon{
+        position: absolute;
+        right:0;
+        bottom: 0;
+    }
+    .mui-table .oa-icon-star-filled{
+        color:#f14e41;
+    }
+    .my-h5{
+        font-size: 12px;
+    }
+    .table{
+        border-bottom: 1px solid #DFDFDF;
+        padding-right: 15px;        
+    }
+    .mui-col-my{
+        width: 27%;
+    }
+    .words{
+        color: #BDBDBD;
+    }
+    .list{
+        padding-left: 29px;
+        line-height: 28px;
+        position: relative;
+    }
+    .list::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #04A6C1;
+        top: 50%;
+        margin-top: -3px;
+        left: 14px;
+    }
+    .list::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 51px;
+        background-color: #04A6C1;
+        top: 50%;
+        left: 17px;
+    }
+    .list:last-of-type::after{
+        display: none;
+    }
+    .time{
+        position: relative;
+        padding-left: 12px;
+    }
+    .time::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: url('../images/time.png') no-repeat;
+        background-size: 10px 10px;
+        top: 10px;
+        left: 0;
+    }
+    .check{
+        width: 9px;
+        height: 9px;
+        border: 1px solid #04a6c1;
+        background-color: #fff;
+    }
+}
