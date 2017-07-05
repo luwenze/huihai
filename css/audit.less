@@ -108,9 +108,70 @@
         left: 0;
     }
     .check{
-        width: 9px;
-        height: 9px;
-        border: 1px solid #04a6c1;
-        background-color: #fff;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        height: auto;
+        padding-top: 8px;
+        >.checkBox{
+            position: absolute;
+            width: 50%;
+            height: 20px;
+            left: 0;
+            top: 0;
+            opacity: 0;  
+            z-index: 2;                   
+        }
+        >button{
+            display: block;
+            margin: 0 auto;
+            background-color:#04A6C1;
+            color: #fff;
+            width: 68%;
+            height: 25px;
+            line-height: 7px;
+            font-size: 12px;
+            margin-top: 18px;
+            margin-bottom: 68px;
+            border-radius: 5px;
+            >em{
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                background-image: url('../images/apply.png');
+                background-repeat: no-repeat;
+                background-size: 13px 13px;
+                vertical-align: middle;
+                margin-right: 4px;
+            }
+        }
+        >span{
+            display: inline-block;
+            position: relative;
+            padding-left: 17px;
+            font-size: 10px;
+            transform: scale(0.9);
+            color: #565656;
+            >em{
+                position: absolute;
+                content: '';
+                display: block;
+                width: 11px;
+                height: 11px;
+                top: 1px;
+                left: 5px;
+                background-image: url('../images/check0.png');
+                background-repeat: no-repeat;
+                background-size: 11px 11px;
+            }
+        }
+    }
+    .check.ischeck{
+        >span{
+            >em{
+                background-image: url('../images/check1.png');
+            }
+        }
     }
 }

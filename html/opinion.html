@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../lib/mui/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/mui/css/mui.picker.min.css" />
+
+
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="../css/base.less">
+    <link rel="stylesheet/less" href="../css/trainAudit.less">
+    <link rel="stylesheet/less" href="../css/trainApply.less">
+    <link rel="stylesheet/less" href="../css/confirmPro.less">
+    <link rel="stylesheet/less" href="../css/opinion.less">
+
+
+
+
+    <!-- 编译less文件的js -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <h3>培训审核</h3>
+    </header>
+    <ul class="flow">
+        <li>
+            <span class="circle checked">1</span>
+            <span>提交申请</span>
+        </li>
+        <li>
+            <span class="circle checked">2</span>
+            <span>资质审核</span>
+        </li>
+        <li>
+            <span class="circle checked">3</span>
+            <span>确定方案</span>
+        </li>
+        <li>
+            <span class="circle checked">4</span>
+            <span>培训计划</span>
+        </li>
+        <li class="last">
+            <span class="circle checked">5</span>
+            <span>意见反馈</span>
+        </li>
+    </ul>
+    <div class="module">
+        <ul class="blue">
+            <li>
+                <h3>
+                    <span>培训计划</span>
+                    <b class="edit fr"><img src="../images/icon-edit.png" ></b>
+                </h3>
+                <div class="submit">
+                    <div>
+                        <span>培训讲师：</span>
+                        <span>程才</span>
+                    </div>
+                    <div>
+                        <span>培训人数：</span>
+                        <span>40人</span>
+                    </div>
+                    <div>
+                        <span>培训日期：</span>
+                        <span>2017年12月12日 15:00-18:20</span>
+                    </div>
+                    <div>
+                        <span>培训类型：</span>
+                        <span>大会</span>
+                    </div>
+                    <div>
+                        <span>培训时长：</span>
+                        <span>3小时20分钟</span>
+                    </div>
+                    <div>
+                        <span>培训区域：</span>
+                        <span>湖北省 武汉市 洪山区</span>
+                    </div>
+                    <div>
+                        <span>培训地点：</span>
+                        <span>光谷世界城</span>
+                    </div>
+                    <div>
+                        <span>培训科目：</span>
+                        <span>幼儿英语 | 幼儿英语 | 幼儿英语</span>
+                    </div>
+                    <div>
+                        <span>培训单位：</span>
+                        <span>红太阳幼儿园</span>
+                    </div>
+                    <div>
+                        <span>负责人：</span>
+                        <span>李诗佳</span>
+                    </div>
+                    <div>
+                        <span>联系电话：</span>
+                        <span>13975887547</span>
+                        <b class="tel"><img src="../images/icon-tel.png" alt=""></b>
+                    </div>
+                    <div>
+                        <span>园所规模：</span>
+                        <span>600人</span>
+                    </div>
+                    <div class="time">
+                        <b class="alarm"><img src="../images/icon-alarm.png" ></b>
+                        <span>2017年12月19日</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="frame">
+            <form class="applyForm">
+                <div id="star0">
+                    <span>服务态度</span>
+                        <ul>
+                            <li><a href="javascript:;">1</a></li>
+
+                            <li><a href="javascript:;">2</a></li>
+
+                            <li><a href="javascript:;">3</a></li>
+
+                            <li><a href="javascript:;">4</a></li>
+
+                            <li><a href="javascript:;">5</a></li>
+                        </ul>
+                    <span></span>
+		            <p></p>
+	            </div><!--star end-->
+                <div id="star1">
+                    <span>服务质量</span>
+                        <ul>
+                            <li><a href="javascript:;">1</a></li>
+
+                            <li><a href="javascript:;">2</a></li>
+
+                            <li><a href="javascript:;">3</a></li>
+
+                            <li><a href="javascript:;">4</a></li>
+
+                            <li><a href="javascript:;">5</a></li>
+                        </ul>
+                    <span></span>
+		            <p></p>
+	            </div><!--star end-->
+                <div class="submit">
+                    <div class="lr explain">
+                        <span class="fl">反馈建议：</span>
+                        <div class="right">
+                            <textarea rows="" cols="" placeholder="请您输入反馈建议"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/trainAudit.js"></script>
+    <script src="../js/confirmPro.js"></script>
+    <script src="../js/opinion.js"></script>
+
+    <!--时间选择模块-->
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/mui/js/mui.picker.min.js"></script>
+    <script>
+        (function ($) {
+            $.init();
+            var result0 = $('#result0')[0];
+            var result1 = $('#result1')[0];
+            var btns = $('.btn');
+            btns.each(function (i, btn) {
+                btn.addEventListener('tap', function () {
+                    var optionsJson = this.getAttribute('data-options') || '{}';
+                    var options = JSON.parse(optionsJson);
+                    var id = this.getAttribute('id');
+                    /*
+                     * 首次显示时实例化组件
+                     * 示例为了简洁，将 options 放在了按钮的 dom 上
+                     * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                     */
+                    var picker = new $.DtPicker(options);
+                    picker.show(function (rs) {
+                        /*
+                         * rs.value 拼合后的 value
+                         * rs.text 拼合后的 text
+                         * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                         * rs.m 月，用法同年
+                         * rs.d 日，用法同年
+                         * rs.h 时，用法同年
+                         * rs.i 分（minutes 的第二个字母），用法同年
+                         */
+                        if (id === 'start') {
+                            result0.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
+                                '日';
+                        } else {
+                            result1.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
+                                '日';
+                        }
+                        /* 
+                         * 返回 false 可以阻止选择框的关闭
+                         * return false;
+                         */
+                        /*
+                         * 释放组件资源，释放后将将不能再操作组件
+                         * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                         * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                         * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                         */
+                        picker.dispose();
+                    });
+                }, false);
+            });
+        })(mui);
+    </script>
+
+</body>
+
+</html>
