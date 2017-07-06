@@ -4,10 +4,95 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+
     <!-- 再引入自己的less -->
     <link rel="stylesheet/less" href="../css/base.less">
     <link rel="stylesheet/less" href="../css/trainList.less">
+    <style>
+        .mui-bar~.mui-content .mui-fullscreen {
+            top: 44px;
+            height: auto;
+        }
+
+        .mui-pull-top-tips {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            margin-left: -25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .mui-bar~.mui-pull-top-tips {
+            top: 24px;
+        }
+
+        .mui-pull-top-wrapper {
+            width: 42px;
+            height: 42px;
+            display: block;
+            text-align: center;
+            background-color: #efeff4;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background-clip: padding-box;
+            box-shadow: 0 4px 10px #bbb;
+            overflow: hidden;
+        }
+
+        .mui-pull-top-tips.mui-transitioning {
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms;
+        }
+
+        .mui-pull-top-tips .mui-pull-loading {
+            /*-webkit-backface-visibility: hidden;
+            -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;*/
+            margin: 0;
+        }
+
+        .mui-pull-top-wrapper .mui-icon,
+        .mui-pull-top-wrapper .mui-spinner {
+            margin-top: 7px;
+        }
+
+        .mui-pull-top-wrapper .mui-icon.mui-reverse {
+            /*-webkit-transform: rotate(180deg) translateZ(0);*/
+        }
+
+        .mui-pull-bottom-tips {
+            text-align: center;
+            background-color: #efeff4;
+            font-size: 15px;
+            line-height: 40px;
+            color: #777;
+        }
+
+        .mui-pull-top-canvas {
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 40px;
+            box-shadow: 0 4px 10px #bbb;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+        }
+
+        .mui-pull-top-canvas canvas {
+            width: 40px;
+        }
+
+        .mui-slider-indicator.mui-segmented-control {
+            background-color: #efeff4;
+        }
+    </style>
     <!-- 编译less文件的js -->
     <script src="../lib/less/less.js"></script>
 </head>
@@ -16,222 +101,871 @@
     <header id="header">
         <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训列表</h3>
-        <a href="#" class="apply"><span>申请</span></a>
+        <a href="./trainApply.html" class="apply"><span>申请</span></a>
     </header>
 
-    <ul class="sort">
-        <li><a href="#" class="checked">全部</a></li>
-        <li><a href="#" class="hint">待审核</a></li>
-        <li><a href="#">已确定</a></li>
-        <li><a href="#">已完成</a></li>
-    </ul>
-    <div class="list">
-        <ul class="applyList">
-            <li>
-                <!--给a标签设置点击事件-->
-                <a href="#"></a>
-                <div class="fl">
-                    <div class="time">
-                        <div>
-                            <span class="date">24</span>
-                        </div>
-                        <div>
-                            <span class="month">12</span>
-                        </div>
-                        <div>
-                            <span class="year">2017</span>
+    <div class="mui-content my-content">
+        <div id="slider" class="mui-slider mui-fullscreen my-full">
+            <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="sort mui-scroll">
+                    <a class="mui-control-item mui-active hint" href="#item1mobile">全部</a>
+                    <a class="mui-control-item hint" href="#item2mobile">待审核</a>
+                    <a class="mui-control-item" href="#item3mobile">已确定</a>
+                    <a  class="mui-control-item" href="#item4mobile">已完成</a>
+                </div>
+            </div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                    <div id="scroll1" class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList">
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="./aptitude.html"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state0">【待审核】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state1">【已确定】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state2">【待完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state3">【已完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="right">
-                    <div class="number">
-                        <span>申请编号:</span>
-                        <span class="applyId">452221112332111232</span>
-                        <span id="state0">【待审核】</span>
-                    </div>
-                    <div class="area">
-                        <b></b>
-                        <span>区域:</span>
-                        <span>湖北省武汉市洪山区</span>
-                    </div>
-                    <div class="project">
-                        <div class="fl">培训科目:</div>
-                        <div class="right">
-                            <div>
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                            <div class="two">
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList">
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="./confirmPro.html"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state0">【待审核】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state1">【已确定】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state2">【待完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state3">【已完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="people">
-                        <b></b>
-                        <span>申请人:</span>
-                        <span>上官幽若</span>
                     </div>
                 </div>
-            </li>
-            <li>
-                <!--给a标签设置点击事件-->
-                <a href="#"></a>
-                <div class="fl">
-                    <div class="time">
-                        <div>
-                            <span class="date">24</span>
-                        </div>
-                        <div>
-                            <span class="month">12</span>
-                        </div>
-                        <div>
-                            <span class="year">2017</span>
+                <div id="item3mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList">
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state0">【待审核】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state1">【已确定】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state1">【已确定】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state3">【已完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="right">
-                    <div class="number">
-                        <span>申请编号:</span>
-                        <span class="applyId">452221112332111232</span>
-                        <span id="state1">【已确定】</span>
-                    </div>
-                    <div class="area">
-                        <b></b>
-                        <span>区域:</span>
-                        <span>湖北省武汉市洪山区</span>
-                    </div>
-                    <div class="project">
-                        <div class="fl">培训科目:</div>
-                        <div class="right">
-                            <div>
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                            <div class="two">
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
+                <div id="item4mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList">
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state0">【待审核】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state1">【已确定】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state2">【待完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <!--给a标签设置点击事件-->
+                                    <a href="#"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div>
+                                                <span class="date">24</span>
+                                            </div>
+                                            <div>
+                                                <span class="month">12</span>
+                                            </div>
+                                            <div>
+                                                <span class="year">2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number">
+                                            <span>申请编号:</span>
+                                            <span class="applyId">452221112332111232</span>
+                                            <span id="state3">【已完成】</span>
+                                        </div>
+                                        <div class="area">
+                                            <b></b>
+                                            <span>区域:</span>
+                                            <span>湖北省武汉市洪山区</span>
+                                        </div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right">
+                                                <div>
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                                <div class="two">
+                                                    <span>蒙氏数学 | </span>
+                                                    <span>蒙氏阅读 | </span>
+                                                    <span>分级阅读 | </span>
+                                                    <span>逻辑宝贝</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="people">
+                                            <b></b>
+                                            <span>申请人:</span>
+                                            <span>上官幽若</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="people">
-                        <b></b>
-                        <span>申请人:</span>
-                        <span>上官幽若</span>
                     </div>
                 </div>
-            </li>
-            <li>
-                <!--给a标签设置点击事件-->
-                <a href="#"></a>
-                <div class="fl">
-                    <div class="time">
-                        <div>
-                            <span class="date">24</span>
-                        </div>
-                        <div>
-                            <span class="month">12</span>
-                        </div>
-                        <div>
-                            <span class="year">2017</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="number">
-                        <span>申请编号:</span>
-                        <span class="applyId">452221112332111232</span>
-                        <span id="state2">【待完成】</span>
-                    </div>
-                    <div class="area">
-                        <b></b>
-                        <span>区域:</span>
-                        <span>湖北省武汉市洪山区</span>
-                    </div>
-                    <div class="project">
-                        <div class="fl">培训科目:</div>
-                        <div class="right">
-                            <div>
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                            <div class="two">
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="people">
-                        <b></b>
-                        <span>申请人:</span>
-                        <span>上官幽若</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <!--给a标签设置点击事件-->
-                <a href="#"></a>
-                <div class="fl">
-                    <div class="time">
-                        <div>
-                            <span class="date">24</span>
-                        </div>
-                        <div>
-                            <span class="month">12</span>
-                        </div>
-                        <div>
-                            <span class="year">2017</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="number">
-                        <span>申请编号:</span>
-                        <span class="applyId">452221112332111232</span>
-                        <span id="state3">【已完成】</span>
-                    </div>
-                    <div class="area">
-                        <b></b>
-                        <span>区域:</span>
-                        <span>湖北省武汉市洪山区</span>
-                    </div>
-                    <div class="project">
-                        <div class="fl">培训科目:</div>
-                        <div class="right">
-                            <div>
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                            <div class="two">
-                                <span>蒙氏数学 | </span>
-                                <span>蒙氏阅读 | </span>
-                                <span>分级阅读 | </span>
-                                <span>逻辑宝贝</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="people">
-                        <b></b>
-                        <span>申请人:</span>
-                        <span>上官幽若</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 
 
@@ -243,8 +977,11 @@
 
 
 
-    <!-- 先引入jquery  Bootstrap依赖jquery-->
-    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/mui/js/mui.pullToRefresh.js"></script>
+    <script src="../lib/mui/js/mui.pullToRefresh.material.js"></script>
+    <script src="../js/trainList.js"></script>
+
 
 </body>
 

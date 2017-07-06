@@ -20,8 +20,8 @@
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
-        <h3>培训审核</h3>
+        <a href="./trainList.html" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <h3>资质审核</h3>
     </header>
     <ul class="flow">
         <li>
@@ -94,8 +94,10 @@
                         </div>
                     </div>
                     <div class="radioBox" id="radioBox">
-                        <input type="radio" class="radio" name="n" id="check-1" hidden checked><label for="check-1">同意</label>
-                        <input type="radio" class="radio" name="n" id="check-2" hidden><label for="check-2" title="">拒绝</label>
+                        <input type="radio" name="apt" value="yes" id="radio1" checked>
+                        <label for="radio1" class="check">同意</label>
+                        <input type="radio" name="apt" value="no" id="radio2">
+                        <label for="radio2">拒绝</label>
                     </div>
                 </li>
             </ul>
@@ -103,8 +105,9 @@
         <div class="subArea">
             <h3>审核批注</h3>
             <p id="showArea">
+                条件符合，同意培训
             </p>
-            <button type="submit">提交</button>
+            <button type="submit" onclick="window.location.href='./trainAudit.html?trainAudit=2';return false">提交</button>
         </div>
     </form>
     
@@ -120,8 +123,7 @@
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../lib/jquery/jquery.min.js"></script>
-
-    <script src="../js/aptitude.js"></script>
+    <script src="../js/aptitude.js"></script>    
 
 </body>
 

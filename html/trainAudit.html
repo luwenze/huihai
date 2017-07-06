@@ -14,10 +14,10 @@
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="./trainList.html" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训审核</h3>
     </header>
-    <ul class="flow">
+    <ul class="flow" id="flow">
         <li>
             <span class="circle checked">1</span>
             <span>提交申请</span>
@@ -40,12 +40,11 @@
         </li>
     </ul>
     <div class="module">
-        <ul class="blue">
+        <ul class="blue" id="blue">
             <li>
                 <h3>
                     <span>申请编号：</span>
                     <span>452221112332111232</span>
-                    <b class="edit fr"><img src="../images/icon-edit.png" ></b>
                 </h3>
                 <div class="submit">
                     <div>
@@ -90,7 +89,7 @@
             <li>
                 <h3>
                     <span>资质审核</span>
-                    <b class="edit fr"><img src="../images/icon-edit.png" ></b>
+                    <a class="edit fr" href="./aptitude.html"><img src="../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit">
                     <div>
@@ -115,7 +114,7 @@
             <li>
                 <h3>
                     <span>确定方案</span>
-                    <b class="edit fr"><img src="../images/icon-edit.png" ></b>
+                    <a class="edit fr" href="./confirmPro.html"><img src="../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit">
                     <div>
@@ -140,7 +139,7 @@
             <li>
                 <h3>
                     <span>培训计划</span>
-                    <b class="edit fr"><img src="../images/icon-edit.png" ></b>
+                    <a class="edit fr"><img src="../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit">
                     <div>
@@ -199,7 +198,7 @@
                 </div>
             </li>
         </ul>
-        <ul class="gray">
+        <ul class="gray" id="gray">
             <li>
                 <h3>资质审核</h3>
                 <div>
@@ -242,7 +241,15 @@
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/trainAudit.js"></script>
 
+    <script src="../lib/mui/js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
 </body>
 
 </html>

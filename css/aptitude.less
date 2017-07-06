@@ -1,116 +1,34 @@
 .radioBox{
+    position: relative;
     width: 100%;
     height: 32px;
     line-height: 28px;
     text-align: center;
     border-top: 1px solid #04A6C1;
-    [id^="checkbox-"] + label {
-        background-color: #FFF;
-        padding: 11px 9px;
-        border-radius: 7px;
-        display: inline-block;
-        position: relative;
-        margin-right: 30px;
-        background: #F7836D;
-        width: 88px;
-        height: 13px;
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(245, 146, 146, 0.4);
-        }
-        [id^="checkbox-"] + label:before {
-        content: ' ';
+    >label{
         position: absolute;
-        background: #FFF;
-        top: 0px;
-        z-index: 99999;
-        left: 0px;
-        width: 24px;
-        color: #FFF;
-        height: 35px;
-        border-radius: 7px;
-        box-shadow: 0 0 1px rgba(0,0,0,0.6);
-        }
-
-        [id^="checkbox-"] + label:after {
-        content: '禁止';
-        position: absolute;
-        top: 7px;
-        left: 37px;
-        font-size: 1.2em;
-        color: white;
-        font-weight: bold;
-        left: 8px;
-        padding: 5px;
-        top: 4px;
-        border-radius: 100px;
-        }
-
-        [id^="checkbox-"]:checked + label {
-        background: #67A5DF;
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(146, 196, 245, 0.4);
-        }
-
-        [id^="checkbox-"]:checked + label:after {
-        content: '允许';
-        left: 6px;
-        }
-
-        [id^="checkbox-"]:checked + label:before {
-        content: ' ';
-        position: absolute;
-        z-index: 99999;
-        left: 82px;
-        }
-
-
-        [id^="checkbox-"] + label:after {
-        left: 35px; 
-        } 
-
-        .radio +label{
-        position: relative;
-        display: inline-block;
-        z-index: 999;
-        width: 74px;
+        display: block;
+        width: 25%;
         height: 100%;
-        padding: 3px 0 3px 26px;
+        background-color: #fff;
+        left: 50%;
+        top: 0;
         font-size: 12px;
         color: #565656;
-        line-height: 23px;
-        }
-
-        .radio+label:before{
-        content:"";
-        color:#fff; 
-        width: 20px;
-        height: 20px;
-        background: #04A6C1;
-        border-radius: 15px;
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        display:block;
-
-        }
-        .radio:checked+label:before{
-        content:"";
-        background: #04A6C1;
-        }
-        .radio+label:after{
-        content: attr(title);
-        width: 10px;
-        height: 10px;
-        display:block;
-        border: 3px solid #F7F9F9;
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        border-radius: 12px;
-        background: #fff;
-
-        }
-        .radio:checked+label:after{
-        background: #04A6C1;
-        }
+        background-image: url('../images/click1.png');
+        background-repeat: no-repeat;
+        background-size: 13px 13px;
+        background-position: 12px 8px;
+        padding-left: 15px;
+        z-index: 20;
+    }
+    >label:first-of-type{
+        margin-left: -25%;
+    }
+    >label.check{
+        background-image: url('../images/click2.png');
+    }
+    
 }
 
 .subArea{
@@ -132,7 +50,7 @@
         font-size: 11px;
         line-height: 20px;
     }
-    >button,button:active{
+    >button,button:active,button:hover{
         display: block;
         margin: 0 auto;
         margin-top: 20px;
@@ -144,9 +62,5 @@
         border: 1px solid #04A6C1;
         background-color: #04A6C1;
         color: #fff;
-    }
-    >button:hover{
-        background-color: #F2F2F2;
-        color: #04A6C1;
     }
 }

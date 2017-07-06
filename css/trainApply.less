@@ -106,6 +106,7 @@
                             border: 1px solid #cbcbcb !important;
                             padding-left: 2px;
                             color: #555555;
+                            line-height: 14px;
                             >option{
                                 display: block;
                                 width: 100%;
@@ -140,30 +141,29 @@
                                     display: block;
                                     width: 10px;
                                     height: 10px;
+                                    background-image: url('../images/delete.png');
+                                    background-repeat: no-repeat;
+                                    background-size: 10px 10px;
                                     position: absolute;
-                                    font-size: 11px;
-                                    border:1px solid #04A6C1;
-                                    color: #04A6C1;
-                                    border-radius: 6px;
-                                    background-color: #fff;
-                                    line-height: 4px;
-                                    text-align: center;
                                     right: -5px;
-                                    top: 1px;
+                                    top: 0px;
                                 }
                             }
                             >li.add{
                                 height: 30px;
                                 >em{
-                                    height: 18px;
-                                    width: 18px;
-                                    border-radius: 8px;
-                                    font-size: 22px;
-                                    line-height: 13px;
+                                    height: 16px;
+                                    width: 16px;
                                     position: absolute;
+                                    background-image: url('../images/plus.png');
+                                    background-repeat: no-repeat;
+                                    background-size: 16px 16px;
                                     top: 50%;
                                     margin-top: -8px;
                                     left: -5px;
+                                }
+                                >em.minus{
+                                    background-image: url('../images/minus.png');
                                 }
                             }
                         }
@@ -280,7 +280,7 @@
                         transform: scale(0.9);
                     }
                 }
-                >button,button:active{
+                >button{
                     display: block;
                     margin: 0 auto;
                     margin-bottom: 30px;
@@ -292,10 +292,7 @@
                     background-color: #04A6C1;
                     color: #fff;
                 }
-                >button:hover{
-                    background-color: #F2F2F2;
-                    color: #04A6C1;
-                }
+                
             }
         }
     }
