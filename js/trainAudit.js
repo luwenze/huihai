@@ -11,7 +11,7 @@ $(function(){
 
 
     //不同的页面传入的id不同，跳转页面现实的内容也不一样
-    for(var k=1;k<=5;k++){
+    for(var k=1;k<5;k++){
         console.log(k);
         if(taId===k){
             $('#flow').children('li').each(function(i,v){
