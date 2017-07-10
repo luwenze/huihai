@@ -7,11 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
 
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../css/base.less">
-    <link rel="stylesheet/less" href="../css/trainList.less">
+    <link rel="stylesheet/less" href="../../css/base.less">
+    <link rel="stylesheet/less" href="../../css/trainList.less">
     <style>
         .mui-bar~.mui-content .mui-fullscreen {
             top: 44px;
@@ -94,14 +94,13 @@
         }
     </style>
     <!-- 编译less文件的js -->
-    <script src="../lib/less/less.js"></script>
+    <script src="../../lib/less/less.js"></script>
 </head>
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训列表</h3>
-        <a href="./trainApply.html" class="apply"><span>申请</span></a>
     </header>
 
     <div class="mui-content my-content">
@@ -110,8 +109,8 @@
                 <div class="sort mui-scroll">
                     <a class="mui-control-item mui-active hint" href="#item1mobile">全部</a>
                     <a class="mui-control-item hint" href="#item2mobile">待审核</a>
-                    <a class="mui-control-item" href="#item3mobile">已确定</a>
-                    <a  class="mui-control-item" href="#item4mobile">已完成</a>
+                    <a class="mui-control-item" href="#item3mobile">待确定</a>
+                    <a  class="mui-control-item" href="#item4mobile">待完成</a>
                 </div>
             </div>
             <div class="mui-slider-group">
@@ -172,7 +171,7 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -333,7 +332,7 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="./confirmPro.html"></a>
+                                    <a href="#"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>

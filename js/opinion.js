@@ -1,4 +1,11 @@
 $(function(){
+    var str=window.location.search;
+    var data=lu.getData(str);
+    var taId=+data.trainAudit;
+    console.log(taId);
+    if(taId===1|2|3|4){
+        return;
+    }
     star('star0');
     star('star1');
    
@@ -82,5 +89,18 @@ $(function(){
 
         }
     }
+
+
+    //点击按钮提交建议反馈
+    // $('#opinion').on('keyup',function(){
+    //     $(this).html($(this).val());
+    // });
+
+    $('#btn').on('click',function(){
+        $('#showRight').html($('#opinion').val());
+        $(this).remove();        
+        return false;
+    });
+    
 
 });

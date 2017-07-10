@@ -4,24 +4,24 @@ $(function(){
     var data=lu.getData(str);
     var taId=+data.trainAudit;
     console.log(taId);
-    var list=$('#gray').find('li');
+    var list=$('#gray').children('li');
     var length=list.length;
     
 
 
 
     //不同的页面传入的id不同，跳转页面现实的内容也不一样
-    for(var k=1;k<5;k++){
+    for(var k=1;k<=5;k++){
         console.log(k);
         if(taId===k){
-            $('#flow').find('li').each(function(i,v){
+            $('#flow').children('li').each(function(i,v){
                 $(this).find('span').eq(0).removeClass('checked');
             });
             for(var i=0;i<k;i++){
-                $('#flow').find('li').eq(i).find('span').eq(0).addClass('checked');
+                $('#flow').children('li').eq(i).find('span').eq(0).addClass('checked');
             }
 
-            $('#blue').find('li').each(function(i,v){
+            $('#blue').children('li').each(function(i,v){
                 if(i>k-1){
                     $(this).remove();
                 }

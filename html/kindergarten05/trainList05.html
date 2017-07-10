@@ -7,11 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
 
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../css/base.less">
-    <link rel="stylesheet/less" href="../css/trainList.less">
+    <link rel="stylesheet/less" href="../../css/base.less">
+    <link rel="stylesheet/less" href="../../css/trainList.less">
     <style>
         .mui-bar~.mui-content .mui-fullscreen {
             top: 44px;
@@ -94,14 +94,13 @@
         }
     </style>
     <!-- 编译less文件的js -->
-    <script src="../lib/less/less.js"></script>
+    <script src="../../lib/less/less.js"></script>
 </head>
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训列表</h3>
-        <a href="./trainApply.html" class="apply"><span>申请</span></a>
     </header>
 
     <div class="mui-content my-content">
@@ -109,8 +108,8 @@
             <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
                 <div class="sort mui-scroll">
                     <a class="mui-control-item mui-active hint" href="#item1mobile">全部</a>
-                    <a class="mui-control-item hint" href="#item2mobile">待审核</a>
-                    <a class="mui-control-item" href="#item3mobile">已确定</a>
+                    <a class="mui-control-item hint" href="#item2mobile">待培训</a>
+                    <a class="mui-control-item" href="#item3mobile">待反馈</a>
                     <a  class="mui-control-item" href="#item4mobile">已完成</a>
                 </div>
             </div>
@@ -121,7 +120,7 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="./aptitude.html"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -137,14 +136,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state0">【待审核】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state0">【待反馈】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -155,24 +154,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -188,14 +181,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【待确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state1">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -206,24 +199,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -239,14 +226,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【已确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state2">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -257,24 +244,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -290,14 +271,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state3">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -308,18 +289,12 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
@@ -333,7 +308,7 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="./confirmPro.html"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -349,14 +324,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
                                             <span id="state0">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -367,24 +342,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -400,14 +369,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state1">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -418,24 +387,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -451,14 +414,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【待完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state2">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -469,24 +432,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -502,14 +459,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state3">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -520,18 +477,12 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
@@ -545,7 +496,7 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -561,14 +512,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
                                             <span id="state0">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -579,24 +530,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -612,14 +557,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state1">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -630,24 +575,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -663,14 +602,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state2">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -681,25 +620,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
-                                
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -715,14 +647,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state3">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -733,18 +665,12 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
@@ -758,7 +684,7 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -774,14 +700,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
                                             <span id="state0">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -792,24 +718,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -825,14 +745,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state1">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -843,24 +763,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -876,14 +790,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【待完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state2">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -894,24 +808,18 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
-                                    <a href="#"></a>
+                                    <a href="./opinion.html"></a>
                                     <div class="fl">
                                         <div class="time">
                                             <div>
@@ -927,14 +835,14 @@
                                     </div>
                                     <div class="right">
                                         <div class="number">
-                                            <span>申请编号:</span>
-                                            <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span>培训编号:</span>
+                                            <span class="applyId">4522211132</span>
+                                            <span id="state3">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
-                                            <span>区域:</span>
-                                            <span>湖北省武汉市洪山区</span>
+                                            <span>地点:</span>
+                                            <span>武汉市红太阳幼儿园</span>
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
@@ -945,18 +853,12 @@
                                                     <span>分级阅读 | </span>
                                                     <span>逻辑宝贝</span>
                                                 </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="people">
                                             <b></b>
-                                            <span>申请人:</span>
-                                            <span>上官幽若</span>
+                                            <span>培训讲师:</span>
+                                            <span>王爽</span>
                                         </div>
                                     </div>
                                 </li>
@@ -977,10 +879,10 @@
 
 
 
-    <script src="../lib/mui/js/mui.min.js"></script>
-    <script src="../lib/mui/js/mui.pullToRefresh.js"></script>
-    <script src="../lib/mui/js/mui.pullToRefresh.material.js"></script>
-    <script src="../js/trainList.js"></script>
+    <script src="../../lib/mui/js/mui.min.js"></script>
+    <script src="../../lib/mui/js/mui.pullToRefresh.js"></script>
+    <script src="../../lib/mui/js/mui.pullToRefresh.material.js"></script>
+    <script src="../../js/trainList05.js"></script>
 
 
 </body>

@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aa5add2-e3ae-4099-a443-60c473865f0a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/trainList2.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/trainList2.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/aptitude.less" afterPath="$PROJECT_DIR$/css/aptitude.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/base.less" afterPath="$PROJECT_DIR$/css/base.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/trainApply.less" afterPath="$PROJECT_DIR$/css/trainApply.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/trainAudit.less" afterPath="$PROJECT_DIR$/css/trainAudit.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/trainList.less" afterPath="$PROJECT_DIR$/css/trainList.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/aptitude.html" afterPath="$PROJECT_DIR$/html/aptitude.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/confirmPro.html" afterPath="$PROJECT_DIR$/html/confirmPro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/opinion.html" afterPath="$PROJECT_DIR$/html/opinion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/trainApply.html" afterPath="$PROJECT_DIR$/html/trainApply.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/trainAudit.html" afterPath="$PROJECT_DIR$/html/trainAudit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/trainList.html" afterPath="$PROJECT_DIR$/html/trainList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/trainPlay.html" afterPath="$PROJECT_DIR$/html/trainPlay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/aptitude.js" afterPath="$PROJECT_DIR$/js/aptitude.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/trainAudit.js" afterPath="$PROJECT_DIR$/js/trainAudit.js" />
-    </list>
+    <list default="true" id="7aa5add2-e3ae-4099-a443-60c473865f0a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -105,6 +88,7 @@
         <option value="$PROJECT_DIR$/html/trainAudit.html" />
         <option value="$PROJECT_DIR$/html/trainList.html" />
         <option value="$PROJECT_DIR$/css/trainAudit.less" />
+        <option value="$PROJECT_DIR$/html/aptitude.html" />
       </list>
     </option>
   </component>
@@ -264,12 +248,12 @@
       <updated>1498453791905</updated>
       <workItem from="1498453793794" duration="3137000" />
       <workItem from="1498535199352" duration="723000" />
-      <workItem from="1499321368020" duration="2282000" />
+      <workItem from="1499321368020" duration="2879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6142000" />
+    <option name="totallyTimeSpent" value="6739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

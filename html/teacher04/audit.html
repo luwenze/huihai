@@ -6,37 +6,39 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 
-    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
-
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../../lib/mui/css/app.css" />
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../css/base.less">
-    <link rel="stylesheet/less" href="../css/trainAudit.less">
-    <link rel="stylesheet/less" href="../css/audit.less">
+    <link rel="stylesheet/less" href="../../css/base.less">
+    <link rel="stylesheet/less" href="../../css/trainAudit.less">
+    <link rel="stylesheet/less" href="../../css/audit.less">
 
     <!-- 编译less文件的js -->
-    <script src="../lib/less/less.js"></script>
+    <script src="../../lib/less/less.js"></script>
 </head>
 
 <body>
     <header id="header">
-        <a href="./trainList.html" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训审核</h3>
     </header>
-    <ul class="flow" id="flow">
+    <ul class="flow">
         <li>
             <span class="circle checked">1</span>
             <span>提交申请</span>
         </li>
         <li>
-            <span class="circle">2</span>
+            <span class="circle checked">2</span>
             <span>资质审核</span>
         </li>
         <li>
-            <span class="circle">3</span>
+            <span class="circle checked">3</span>
             <span>确定方案</span>
         </li>
         <li>
-            <span class="circle">4</span>
+            <span class="circle checked">4</span>
             <span>培训计划</span>
         </li>
         <li class="last">
@@ -45,7 +47,7 @@
         </li>
     </ul>
     <div class="module">
-        <ul class="blue" id="blue">
+        <ul class="blue">
             <li>
                 <h3>
                     <span>申请编号：</span>
@@ -63,7 +65,7 @@
                     <div>
                         <span>联系电话：</span>
                         <span>13975887547</span>
-                        <b class="tel"><img src="../images/icon-tel.png" alt=""></b>
+                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
                     </div>
                     <div>
                         <span>培训时间：</span>
@@ -86,7 +88,7 @@
                         <div class="right">可能会说可能不会说，知道或者不知道，没可能或者有可能，不对或者对的</div>
                     </div>
                     <div class="time">
-                        <b class="alarm"><img src="../images/icon-alarm.png" ></b>
+                        <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
                         <span>2017年12月19日</span>
                     </div>
                 </div>
@@ -94,7 +96,6 @@
             <li>
                 <h3>
                     <span>资质审核</span>
-                    <a class="edit fr" href="./aptitude.html"><img src="../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit">
                     <div>
@@ -104,14 +105,14 @@
                     <div>
                         <span>联系电话：</span>
                         <span>13975887547</span>
-                        <b class="tel"><img src="../images/icon-tel.png" alt=""></b>
+                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
                     </div>
                     <div class="lr">
                         <span class="fl">审核批注：</span>
                         <div class="right">经过电话核对，了解申请方需求，以及初步信息。条件符合，同意培训</div>
                     </div>
                     <div class="time">
-                        <b class="alarm"><img src="../images/icon-alarm.png" ></b>
+                        <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
                         <span>2017年12月19日</span>
                     </div>
                 </div>
@@ -119,7 +120,6 @@
             <li>
                 <h3>
                     <span>确定方案</span>
-                    <a class="edit fr" href="./confirmPro.html"><img src="../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit">
                     <div>
@@ -129,14 +129,14 @@
                     <div>
                         <span>联系电话：</span>
                         <span>13975887547</span>
-                        <b class="tel"><img src="../images/icon-tel.png" alt=""></b>
+                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
                     </div>
                     <div class="lr">
                         <span class="fl">审核批注：</span>
                         <div class="right">经过电话核对，了解申请方需求，以及初步信息。条件符合，同意培训</div>
                     </div>
                     <div class="time">
-                        <b class="alarm"><img src="../images/icon-alarm.png" ></b>
+                        <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
                         <span>2017年12月19日</span>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
             <li>
                 <h3>
                     <span>培训计划</span>
-                    <a class="edit fr"><img src="../images/icon-edit.png" ></a>
+                    <a class="edit fr"><img src="../../images/icon-edit.png" ></a>
                 </h3>
                 <div class="submit msgList">
                     <h3>
@@ -157,6 +157,7 @@
                     </h3>
                     <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
                         <li class="list">
+                            <a href="../formDetails.html"></a>
                             <div class="mui-table table">
                                 <div class="mui-table-cell mui-col-xs-10">
                                     <h4 class="mui-ellipsis">红太阳幼儿园</h4>
@@ -201,92 +202,13 @@
                             </div>
                         </li>
                     </ul>
+                    <form class="check ischeck">
+                        <input type="checkbox" name="" value="" class="checkBox" id="checkBox">
+                        <span><em id="em"></em>培训老师根据培训场次提交培训信息表单。</span>
+                        <button type="submit" onclick="window.location.href='./trainPlay.html';return false"><em></em>生成表单</button>
+                    </form>
                 </div>
-            </li>
-            <li>
-                <h3>
-                    <span>意见反馈</span>
-                </h3>
-                <div class="submit">
-                    <div class="starBox">
-                        <div id="star0">
-                            <span>服务态度</span>
-                            <ul>
-                                <li><a href="javascript:;">1</a></li>
-
-                                <li><a href="javascript:;">2</a></li>
-
-                                <li><a href="javascript:;">3</a></li>
-
-                                <li><a href="javascript:;">4</a></li>
-
-                                <li><a href="javascript:;">5</a></li>
-                            </ul>
-                            <span>
-                                <strong></strong>
-                            </span>
-                            <p></p>
-                        </div>
-                        <!--star end-->
-                        <div id="star1">
-                            <span>服务质量</span>
-                            <ul>
-                                <li><a href="javascript:;">1</a></li>
-
-                                <li><a href="javascript:;">2</a></li>
-
-                                <li><a href="javascript:;">3</a></li>
-
-                                <li><a href="javascript:;">4</a></li>
-
-                                <li><a href="javascript:;">5</a></li>
-                            </ul>
-                            <span>
-                                <strong></strong>
-                            </span>
-                            <p></p>
-                        </div>
-                        <!--star end-->
-                    </div>
-                    <div class="opi">
-                        <span class="left">所属区域：</span>
-                        <span>经过电话核对，了解我方需求，服务心专业，找培训来这里就对了,根号更好多多肥城市我vgb忒瑞士银行闲而已和多多多多多多多多多多多多</span>
-                    </div>
-                    <div class="time">
-                        <b class="alarm"><img src="../images/icon-alarm.png" ></b>
-                        <span>2017年12月19日</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="gray" id="gray">
-            <li>
-                <h3>资质审核</h3>
-                <div>
-                    <img src="../images/auditing.png" alt="">
-                    <span>资质正在审核中，请随时关注!</span>
-                </div>
-            </li>
-            <li>
-                <h3>确定方案</h3>
-                <div>
-                    <img src="../images/auditing.png" alt="">
-                    <span>方案正在确定中，请随时关注！</span>
-                </div>
-            </li>
-            <li>
-                <h3>培训计划</h3>
-                <div>
-                    <img src="../images/auditing.png" alt="">
-                    <span>计划正在确定中，请随时关注！</span>
-                </div>
-            </li>
-            <li>
-                <h3>意见反馈</h3>
-                <div>
-                    <img src="../images/auditing.png" alt="">
-                    <span>暂无意见反馈，请随时关注！</span>
-                </div>
+                
             </li>
         </ul>
     </div>
@@ -300,18 +222,19 @@
 
 
 
-    <!-- 先引入jquery  Bootstrap依赖jquery-->
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../js/common.js"></script>
-    <script src="../js/trainAudit.js"></script>
-    <script src="../js/opinion.js"></script>
 
-    <script src="../lib/mui/js/mui.min.js"></script>
-    <script>
-        mui.init({
-            swipeBack: true //启用右滑关闭功能
-        });
-    </script>
+
+
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../js/audit.js"></script>
+    <script src="../../lib/mui/js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	</script>
+
 </body>
 
 </html>
