@@ -95,8 +95,8 @@ mui.init();
                                         +'<span>'+cityStr+'</span>'
                                     +'</div>';
                         //右边project部分字符串
-                        // var proStr=
-                        // if()
+                        //var proStr=
+                        
 
 
                         var li=document.createAttribute('li');
