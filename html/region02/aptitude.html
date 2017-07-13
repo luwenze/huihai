@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
 
     <!--标准mui.css-->
     <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
@@ -19,8 +22,9 @@
 </head>
 
 <body>
+    
     <header id="header">
-        <a href="./trainList02.html" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>资质审核</h3>
     </header>
     <ul class="flow">
@@ -52,7 +56,6 @@
                     <h3>
                         <span>申请编号：</span>
                         <span>452221112332111232</span>
-                        <b class="edit fr"><img src="../../images/icon-edit.png" ></b>
                     </h3>
                     <div class="submit">
                         <div>
@@ -95,8 +98,8 @@
                     </div>
                     <div class="radioBox" id="radioBox">
                         <input type="radio" name="apt" value="yes" id="radio1" checked>
+                        <input type="radio" name="apt" value="no" id="radio2">                        
                         <label for="radio1" class="check">同意</label>
-                        <input type="radio" name="apt" value="no" id="radio2">
                         <label for="radio2">拒绝</label>
                     </div>
                 </li>
@@ -122,6 +125,7 @@
 
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
+    
     <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../js/aptitude.js"></script>
     <script src="../../lib/mui/js/mui.min.js"></script>    

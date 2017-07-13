@@ -43,15 +43,9 @@ document.touch('', function () {
     mui.back();
 });
 
-// var backTag=document.getElementById('backTag');
-// backTag.on('tap',function(){
-//     mui.back();
-// });
 
-// mui('#header').on('tap','#backTag',function(){
-//     alert(123);
-// });
-
-// mui('body').on('hidden', '.apply', function(e) {
-//             //console.log('shown', e.detail.id);//detail为当前popover元素
-//         });
+if(document.getElementById('backTag')){
+        document.getElementById('backTag').addEventListener('tap',function(){
+        mui.back();
+    });
+}

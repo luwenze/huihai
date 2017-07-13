@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
 
 
     <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
@@ -19,8 +23,8 @@
 
 <body>
     <header id="header">
-        <a href="./trainList.html" class="back"><img src="../images/back-font.png" alt=""><span>返回</span></a>
-        <h3>培训审核</h3>
+        <a href="javascript:void(0);" class="back" id="backTag"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <h3 id="headerTit">培训审核</h3>
     </header>
     <ul class="flow" id="flow">
         <li>
@@ -246,7 +250,7 @@
     <script src="../js/opinion.js"></script>
 
     <script src="../lib/mui/js/mui.min.js"></script>
-    <script src="../../js/muiCom.js"></script>
+    <script src="../js/muiCom.js"></script>
 
 </body>
 

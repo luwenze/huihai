@@ -3,9 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Access-Control-Allow-Origin" content=" ">
+    <meta http-equiv="content-security-policy">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
 
     <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
 
@@ -14,35 +18,35 @@
     <link rel="stylesheet/less" href="../../css/trainList.less">
     <style>
         .mui-bar~.mui-content .mui-fullscreen {
-            top: 44px;
+            top: 3.6666666666666665rem;
             height: auto;
         }
 
         .mui-pull-top-tips {
             position: absolute;
-            top: -20px;
+            top: -1.6666666666666667rem;
             left: 50%;
-            margin-left: -25px;
-            width: 40px;
-            height: 40px;
+            margin-left: -2.0833333333333335rem;
+            width: 3.3333333333333335rem;
+            height: 3.3333333333333335rem;
             border-radius: 100%;
             z-index: 1;
         }
 
         .mui-bar~.mui-pull-top-tips {
-            top: 24px;
+            top: 2rem;
         }
 
         .mui-pull-top-wrapper {
-            width: 42px;
-            height: 42px;
+            width: 3.5rem;
+            height: 3.5rem;
             display: block;
             text-align: center;
             background-color: #efeff4;
             border: 1px solid #ddd;
-            border-radius: 25px;
+            border-radius: 2.0833333333333335rem;
             background-clip: padding-box;
-            box-shadow: 0 4px 10px #bbb;
+            box-shadow: 0 0.3333333333333333rem 0.8333333333333334rem #bbb;
             overflow: hidden;
         }
 
@@ -60,7 +64,7 @@
 
         .mui-pull-top-wrapper .mui-icon,
         .mui-pull-top-wrapper .mui-spinner {
-            margin-top: 7px;
+            margin-top: 0.5833333333333334rem;
         }
 
         .mui-pull-top-wrapper .mui-icon.mui-reverse {
@@ -70,23 +74,23 @@
         .mui-pull-bottom-tips {
             text-align: center;
             background-color: #efeff4;
-            font-size: 15px;
-            line-height: 40px;
+            font-size: 1.25rem;
+            line-height: 3.3333333333333335rem;
             color: #777;
         }
 
         .mui-pull-top-canvas {
             overflow: hidden;
             background-color: #fafafa;
-            border-radius: 40px;
-            box-shadow: 0 4px 10px #bbb;
-            width: 40px;
-            height: 40px;
+            border-radius: 3.3333333333333335rem;
+            box-shadow: 0 0.3333333333333333rem 0.8333333333333334rem #bbb;
+            width: 3.3333333333333335rem;
+            height: 3.3333333333333335rem;
             margin: 0 auto;
         }
 
         .mui-pull-top-canvas canvas {
-            width: 40px;
+            width: 3.3333333333333335rem;
         }
 
         .mui-slider-indicator.mui-segmented-control {
@@ -99,7 +103,7 @@
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训列表</h3>
         <a href="./trainApply.html" class="apply"><span>申请</span></a>
     </header>
@@ -111,7 +115,7 @@
                     <a class="mui-control-item mui-active hint" href="#item1mobile">全部</a>
                     <a class="mui-control-item hint" href="#item2mobile">待审核</a>
                     <a class="mui-control-item" href="#item3mobile">待确定</a>
-                    <a  class="mui-control-item" href="#item4mobile">待完成</a>
+                    <a class="mui-control-item" href="#item4mobile">待完成</a>
                 </div>
             </div>
             <div class="mui-slider-group">
@@ -137,12 +141,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state0">【待审核】</span>
+                                            <span id="state0" class="state">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -151,19 +157,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -175,6 +181,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -188,12 +197,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【待确定】</span>
+                                            <span id="state1" class="state">【待确定】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -202,19 +213,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -226,6 +237,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -239,12 +253,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【已确定】</span>
+                                            <span id="state2" class="state">【待完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -253,19 +269,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -277,6 +293,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -290,12 +309,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span id="state3" class="state">【已完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -304,19 +325,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -336,6 +357,9 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -349,12 +373,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state0">【待审核】</span>
+                                            <span id="state0" class="state">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -363,19 +389,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -387,6 +413,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -400,12 +429,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span id="state1" class="state">【待确定】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -414,19 +445,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -438,6 +469,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -451,12 +485,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【待完成】</span>
+                                            <span id="state2" class="state">【待完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -465,19 +501,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -489,6 +525,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -502,12 +541,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span id="state3" class="state">【已完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -516,19 +557,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -548,6 +589,9 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -561,12 +605,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state0">【待审核】</span>
+                                            <span id="state0" class="state">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -575,19 +621,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -599,6 +645,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -612,12 +661,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span id="state1" class="state">【待确定】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -626,19 +677,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -650,6 +701,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -663,12 +717,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span id="state2" class="state">【待完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -677,19 +733,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -699,9 +755,11 @@
                                         </div>
                                     </div>
                                 </li>
-                                
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -715,12 +773,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span id="state3" class="state">【已完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -729,19 +789,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -761,6 +821,9 @@
                             <ul class="mui-table-view applyList">
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -774,12 +837,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state0">【待审核】</span>
+                                            <span id="state0" class="state">【待审核】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -788,19 +853,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -812,6 +877,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -825,12 +893,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state1">【已确定】</span>
+                                            <span id="state1" class="state">【待确定】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -839,19 +909,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -863,6 +933,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -876,12 +949,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state2">【待完成】</span>
+                                            <span id="state2" class="state">【待完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -890,19 +965,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">
@@ -914,6 +989,9 @@
                                 </li>
                                 <li class="mui-table-view-cell">
                                     <!--给a标签设置点击事件-->
+
+                                    <!--这里的每一项的a标签都是跳转到../trainAudit.html页面-->
+
                                     <a href="../trainAudit.html"></a>
                                     <div class="fl">
                                         <div class="time">
@@ -927,12 +1005,14 @@
                                                 <span class="year">2017</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    
                                     <div class="right">
                                         <div class="number">
                                             <span>申请编号:</span>
                                             <span class="applyId">452221112332111232</span>
-                                            <span id="state3">【已完成】</span>
+                                            <span id="state3" class="state">【已完成】</span>
                                         </div>
                                         <div class="area">
                                             <b></b>
@@ -941,19 +1021,19 @@
                                         </div>
                                         <div class="project">
                                             <div class="fl">培训科目:</div>
-                                            <div class="right">
-                                                <div>
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
-                                                <div class="two">
-                                                    <span>蒙氏数学 | </span>
-                                                    <span>蒙氏阅读 | </span>
-                                                    <span>分级阅读 | </span>
-                                                    <span>逻辑宝贝</span>
-                                                </div>
+                                            <div class="right clearfix">
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
+                                                <span>蒙氏数学 | </span>
+                                                <span>蒙氏阅读 | </span>
+                                                <span>分级阅读 | </span>
+                                                <span>逻辑宝贝 | </span>
                                             </div>
                                         </div>
                                         <div class="people">

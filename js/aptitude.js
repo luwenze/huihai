@@ -1,6 +1,9 @@
 
 $(function(){
+    alert(1)
     $('#radioBox').find('label').on('click',function(){
+        alert(2);
+        
         if($(this).attr('class')==='check'){
             return;
         }

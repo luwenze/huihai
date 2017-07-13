@@ -36,6 +36,25 @@ $(function(){
                     $(list).eq(i).remove();
                 }
             }
+            
+            switch(k)
+            {
+                case 1:
+                    $('#headerTit').html('培训审核');
+                    break;
+                case 2:
+                    $('#headerTit').html('资质审核');
+                    break;
+                case 3:
+                    $('#headerTit').html('确定方案');
+                    break;
+                case 4:
+                    $('#headerTit').html('表单详情');
+                    break;
+                case 5:
+                    $('#headerTit').html('意见反馈');
+                    break;
+            }
             break;
         }
     }

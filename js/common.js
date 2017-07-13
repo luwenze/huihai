@@ -19,6 +19,10 @@
             })
             return obj;
         },
+        // backTag:function(tagName){
+        //     var dom=document.querySelectorAll(tagName);
+
+        // }
     };
 })();
     

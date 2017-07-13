@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
 
 
+    
     <!--标准mui.css-->
     <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
     <!--App自定义的css-->
@@ -29,7 +34,7 @@
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训审核</h3>
     </header>
     <ul class="flow">
@@ -162,7 +167,7 @@
 心专业，找培训来这里就对了" id="opinion"></textarea>
                         </div>
                     </div>
-                    <button type="submit" id="btn">提交</button>
+                    <button type="submit" onclick="window.location.href='../formDetails.html';return false">提交</button>
                 </div>
             </form>
         </div>

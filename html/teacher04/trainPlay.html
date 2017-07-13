@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
 
     
 
@@ -20,12 +24,12 @@
     <link rel="stylesheet/less" href="../../css/trainPlay.less">
     <style>
         h5.mui-content-padded {
-            margin-left: 3px;
-            margin-top: 20px !important;
+            margin-left: 0.25rem;
+            margin-top: 1.6666666666666667rem !important;
         }
 
         h5.mui-content-padded:first-child {
-            margin-top: 12px !important;
+            margin-top: 1rem !important;
         }
 
         * {
@@ -41,7 +45,7 @@
 
 <body>
     <header id="header">
-        <a href="#" class="back"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
+        <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>培训计划</h3>
     </header>
     <ul class="flow">
@@ -200,18 +204,39 @@
                         </div>
                     </div>
 
-                    
-
-                    
-                    
-                    
-                    <!--备注-->
-                    <div class="lr explain">
-                        <span class="fl">备注说明：</span>
+                    <!--参训单位-->
+                    <div class="lr site">
+                        <span class="fl">参训单位：</span>
                         <div class="right">
-                            <textarea rows="" cols="" placeholder="条件符合，同意培训"></textarea>
+                            <input type="" name="" value="" placeholder="红太阳幼儿园">
                         </div>
                     </div>
+                    
+                    <!--负责人-->
+                    <div class="lr site">
+                        <span class="fl">负责人：</span>
+                        <div class="right">
+                            <input type="" name="" value="" placeholder="李诗佳">
+                        </div>
+                    </div>
+
+                    <!--联系电话-->
+                    <div class="lr site">
+                        <span class="fl">联系电话：</span>
+                        <div class="right">
+                            <input type="" name="" value="" placeholder="11122224444">
+                        </div>
+                    </div>
+
+                    <!--园所规模-->
+                    <div class="lr site">
+                        <span class="fl">园所规模：</span>
+                        <div class="right">
+                            <input type="" name="" value="" placeholder="600人">
+                        </div>
+                    </div>
+                    
+                    
                     <button type="submit" onclick="window.location.href='../formDetails.html';return false">提交</button>
 
                 </div>

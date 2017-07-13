@@ -1,18 +1,19 @@
 .msgList{
     background-color: #fff;
     >h3{
-        padding-left: 2.2rem;
+        padding-left: 33px;
         position: relative;
-        height: 1.8rem;
+        height: 30px;
         >em{
             position: absolute;
             display: inline-block;
-            width: 0.83rem;
-            height: 0.83rem;
+            width: 15px;
+            height: 15px;
             background-repeat: no-repeat;
-            background-size: 0.83rem 0.83rem;
-            top: 0.45rem;
-            left: 1rem;
+            background-size: 15px 15px;
+            top: 6px;
+            left: 15px;
+
         }
         >em.applyman{
             background-image: url('../images/applyman.png');
@@ -21,23 +22,24 @@
             background-image: url('../images/apply-list.png');
         }
         >span{
-            font-size: 0.83rem;
+            font-size: 12px;
             color: #565656;
-            line-height: 1.8rem;
+            line-height: 29px;
+            
         }
     }
     >h3+h3{
-        border-top: 0.08333333333333333rem solid #F2F2F2;
+        border-top: 1px solid #F2F2F2;
     }
 
     .mui-table h4,.mui-table h5,.mui-table .mui-h5,.mui-table .mui-h6,.mui-table p{
         margin-top: 0;
     }
     .mui-table h4{
-        line-height: 1.75rem;
+        line-height: 21px;
         font-weight: normal;
         color: #565656;
-        font-size: 1rem;
+        font-size: 15px;
     }
     .mui-table .oa-icon{
         position: absolute;
@@ -48,42 +50,21 @@
         color:#f14e41;
     }
     .my-h5{
-        font-size: 1rem;
+        font-size: 12px;
     }
     .table{
-        border-bottom: 0.083rem solid #DFDFDF;
-        padding-right: 0.5rem;
-        >.mui-table-cell{
-            >.time{
-                font-size: 0.75rem;
-                position: relative;
-                padding-left: 1rem;
-            }
-            >.time::before{
-                content: '';
-                position: absolute;
-                display: block;
-                width: 0.8333333333333334rem;
-                height: 0.8333333333333334rem;
-                background: url('../images/time.png') no-repeat;
-                background-size: 0.8333333333333334rem 0.8333333333333334rem;
-                top: 0.6rem;
-                left: 0;
-            }
-        }
+        border-bottom: 1px solid #DFDFDF;
+        padding-right: 15px;        
     }
     .mui-col-my{
         width: 30%;
-        >span{
-            font-size: 0.8rem;
-        }
     }
     .words{
         color: #BDBDBD;
     }
     .list{
-        padding-left: 2rem;
-        line-height: 2rem;
+        padding-left: 29px;
+        line-height: 28px;
         position: relative;
         >a{
             position: absolute;
@@ -93,49 +74,63 @@
             left: 0;
             z-index: 20;
         }
+
     }
     .list::before{
         content: '';
         display: block;
         position: absolute;
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 0.25rem;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
         background-color: #04A6C1;
         top: 50%;
-        margin-top: -0.25rem;
-        left: 0.75rem;
+        margin-top: -3px;
+        left: 14px;
     }
     .list::after{
         content: '';
         display: block;
         position: absolute;
-        width: 0.08rem;
-        height: 4.2rem;
+        width: 1px;
+        height: 51px;
         background-color: #04A6C1;
         top: 50%;
-        left: 0.96rem;
+        left: 17px;
     }
     .list:last-of-type::after{
         display: none;
     }
-    
-    
+    .time{
+        position: relative;
+        padding-left: 12px;
+    }
+    .time::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: url('../images/time.png') no-repeat;
+        background-size: 10px 10px;
+        top: 10px;
+        left: 0;
+    }
     .check{
         display: block;
         overflow: hidden;
         text-align: center;
         position: relative;
         height: auto;
-        padding-top: 0.6666666666666666rem;
+        padding-top: 8px;
         >.checkBox{
             position: absolute;
             width: 50%;
-            height: 1.6666666666666667rem;
+            height: 20px;
             left: 0;
             top: 0;
-            opacity: 0;
-            z-index: 2;
+            opacity: 0;  
+            z-index: 2;                   
         }
         >button{
             display: block;
@@ -143,41 +138,41 @@
             background-color:#04A6C1;
             color: #fff;
             width: 68%;
-            height: 2.0833333333333335rem;
-            line-height: 0.5833333333333334rem;
-            font-size: 1rem;
-            margin-top: 1.5rem;
-            margin-bottom: 5.666666666666667rem;
-            border-radius: 0.4166666666666667rem;
+            height: 25px;
+            line-height: 7px;
+            font-size: 12px;
+            margin-top: 18px;
+            margin-bottom: 68px;
+            border-radius: 5px;
             >em{
                 display: inline-block;
-                width: 1.0833333333333333rem;
-                height: 1.0833333333333333rem;
+                width: 13px;
+                height: 13px;
                 background-image: url('../images/apply.png');
                 background-repeat: no-repeat;
-                background-size: 1.0833333333333333rem 1.0833333333333333rem;
+                background-size: 13px 13px;
                 vertical-align: middle;
-                margin-right: 0.3333333333333333rem;
+                margin-right: 4px;
             }
         }
         >span{
             display: inline-block;
             position: relative;
-            padding-left: 1.4166666666666667rem;
-            font-size: 0.8333333333333334rem;
+            padding-left: 17px;
+            font-size: 10px;
             transform: scale(0.9);
             color: #565656;
             >em{
                 position: absolute;
                 content: '';
                 display: block;
-                width: 0.9166666666666666rem;
-                height: 0.9166666666666666rem;
-                top: 0.08333333333333333rem;
-                left: 0.4166666666666667rem;
+                width: 11px;
+                height: 11px;
+                top: 1px;
+                left: 5px;
                 background-image: url('../images/check0.png');
                 background-repeat: no-repeat;
-                background-size: 0.9166666666666666rem 0.9166666666666666rem;
+                background-size: 11px 11px;
             }
         }
     }
