@@ -15,6 +15,8 @@ mui.init();
 
         var fragment;
         var pagesize=1;
+        var lastIndex=0;
+        var startIndex=0;
 
         
         
@@ -47,7 +49,7 @@ mui.init();
                                 //index是指第几个tab
                                 //1是创建的个数
                                 //最后的布尔值代表了重新加载列表项的顺序，false大到小
-                                getList(71993,'',72252,0,3,ul,index,1,true);
+                                getList(71993,'',72252,0,pagesize,ul,index,true);
                                 console.log(fragment);
                                 self.endPullDownToRefresh();
                             }, 1000);
@@ -60,7 +62,14 @@ mui.init();
                             setTimeout(function() {
                                 // ul.appendChild(createFragment(ul, index, 5));
                                 var ul = self.element.querySelector('.mui-table-view');
-                                getList(71993,'',72252,0,3,ul,index,1,false);
+                                if(lastIndex!=-1){
+                                    console.log(startIndex);
+                                    getList(71993,'',72252,startIndex,pagesize,ul,index,false);
+                                    
+
+                                }else{
+
+                                }
                                 self.endPullUpToRefresh();
                             }, 1000);
                         }
@@ -110,16 +119,19 @@ mui.init();
                 dataType: "json",
                 timeout: 1000,
                 success: function(response) {
+
                     
                     var length = ul.querySelectorAll('li').length;
                     var data=response.data,
                         userType=data.userType,//角色类型
                         dataList=data.listData,//数据列表
-                        lastIndex=data.lastIndex;//下一页开始位置，-1表示无下一页
                         pageCount=data.pageCount,//总条数
-                        page=pageCount/pagesize;//总条数除以每一页的条数等于  总页数
-                        console.log(page);
+                        page=pageCount/pagesize,//总条数除以每一页的条数等于  总页数
                         reg = /[\u4e00-\u9fa5]/gm;//匹配汉字
+                        lastIndex=data.lastIndex;//下一页开始位置，-1表示无下一页
+                        console.log(startIndex);
+                        console.log(page);       
+                        
 
                     //fragment为创建的div
                     //fragment = document.createElement('div');
@@ -258,10 +270,11 @@ mui.init();
                     
                 },
                 complete:function(){
-                    //console.log(fragment);
+                    startIndex=lastIndex;
                 }
 
             });
             //console.log(fragment);
+            console.log(startIndex);
         }
     })(mui);
