@@ -6,6 +6,17 @@ mui.init({
             var result0 = $('#result0')[0];
             var result1 = $('#result1')[0];
             var btns = $('.btn');
+            var timeStr0;
+            var timeStr1;
+            //设置time0和time1的默认值
+            var time0=time1=Date.parse('2017/12/12');//时间选择框中的默认选项
+            console.log(time0);
+            var applyForm=document.getElementById('applyForm');
+            var fate=applyForm.querySelector('#fate');
+            
+
+
+            //点击日期按钮选择日期时间功能
             btns.each(function (i, btn) {
                 btn.addEventListener('tap', function () {
                     var optionsJson = this.getAttribute('data-options') || '{}';
@@ -30,9 +41,30 @@ mui.init({
                         if (id === 'start') {
                             result0.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
                                 '日';
+                            timeStr0=result0.innerText.replace(/[\u4e00-\u9fa5]/gm, "/");
+                            timeStr0=timeStr0.substr(0,timeStr0.length-1);
+                            console.log(timeStr0);
+                            time0=Date.parse(timeStr0);
+                            console.log(time0);
+                            
                         } else {
                             result1.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
                                 '日';
+                            timeStr1=result1.innerText.replace(/[\u4e00-\u9fa5]/gm, "/");
+                            timeStr1=timeStr1.substr(0,timeStr1.length-1);
+                            console.log(timeStr1);
+                            time1=Date.parse(timeStr1);
+                            console.log(time1);
+                        }
+                        var timeDiffer=time1-time0;
+                        console.log('time0===='+time0);
+                        console.log('time1====='+time1);
+                        if(timeDiffer<=0){
+                            fate.innerHTML='结束时间应在开始时间之后';
+                            fate.style.color='#d42121';
+                        }else{
+                            fate.innerHTML=timeDiffer/1000/3600/24+'天';
+                            fate.style.color='#565656';
                         }
                         /* 
                          * 返回 false 可以阻止选择框的关闭
@@ -48,4 +80,7 @@ mui.init({
                     });
                 }, false);
             });
+
+
+            
         })(mui);

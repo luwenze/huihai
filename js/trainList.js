@@ -19,7 +19,7 @@ mui.init();
         var userId=71993;//登陆的用户Id
         var applyState='';//点击栏目状态，无时为全部，1待确认，2、3待完成，4已完成
         var companyId=72252;//用户登录的机构Id
-        var pagesize=3;//控制每一次加载的条数
+        var pagesize=5;//控制每一次加载的条数
         var lastIndex=0;//初始时默认为0
         var startIndex=0;//初始时第一页为0
 
@@ -40,34 +40,90 @@ mui.init();
             
 
 
-            //进入页面时，默认为全部状态
-
+            //1.进入页面时，默认为全部状态
             //在这里把所有元素都初始加载上
-
-            var all=document.querySelector('.mui-table-view');
+            var all=document.querySelectorAll('.mui-table-view');
             console.log(all);
-            getList(userId,applyState,companyId,startIndex,pagesize,all,0,true);
-            /*$.each(document.querySelectorAll('.mui-scroll .mui-control-item'),function(i,v){
-                console.log(i);
-                console.log(v);
-                $(v).on('tap',function(){
-                    var aId=this.getAttribute('href');
-                    alert(aId);
-                    getList(userId,applyState,companyId,startIndex,pagesize,ul,i,true);                    
-                });
-            });*/
+            getList(userId,applyState,companyId,0,pagesize,all[0],0,true);
+
+
+            var swipeBox=document.querySelector('.mui-slider-group');
+
+
+            //2.舰艇左右滑动事件
+            //二者只是判断条件有所区别
+            //监听右滑事件，右滑就是列表项往左显示
+            swipeBox.addEventListener('swiperight',function(){
+                
+                lastIndex=0;
+                var clientW=document.body.clientWidth;//获取屏幕宽度
+                var placeX=this.style.cssText.split(' ')[1].replace(/[^0-9]+/g, '');//获取每次移动后的样式
+                placeX=placeX.substring(1);//获取每次translateX的值
+                console.log(placeX/clientW);
+                var placeIndex=Math.floor(placeX/clientW);//获取每次移动的对应的index值
+
+                //通过index确定对应的applyState的值
+                if(placeIndex==0){
+                    applyState='';//全部
+                }else if(placeIndex==1){
+                    applyState=0;//待审核
+                }else if(placeIndex==2){
+                    applyState=1;//带确认
+                }
+                //找到对应的placeUl
+                console.log(placeIndex);
+                placeUl=this.querySelectorAll('.mui-table-view')[placeIndex];
+                //将内容先清空
+                placeUl.innerHTML='';
+
+                getList(userId,applyState,companyId,0,pagesize,placeUl,placeIndex+1,true);
+            });
+
+
+
+
+            //监听左滑事件，左滑就是列表项往右显示
+            swipeBox.addEventListener('swipeleft',function(){
+                lastIndex=0;
+                var clientW=document.body.clientWidth;//获取屏幕宽度
+                var placeX=this.style.cssText.split(' ')[1].replace(/[^0-9]+/g, '');//获取每次移动后的样式
+                placeX=placeX.substring(1);//获取每次translateX的值
+                console.log(placeX/clientW);
+                var placeIndex=Math.floor(placeX/clientW);//获取每次移动的对应的index值
+
+                //通过index确定对应的applyState的值
+                if(placeIndex==1){
+                    applyState=0;//待审核
+                }else if(placeIndex==2){
+                    applyState=1;//待确定
+                }else if(placeIndex==3){
+                    applyState=2;//带完成
+                }
+                //找到对应的placeUl
+                console.log(placeIndex);
+                placeUl=this.querySelectorAll('.mui-table-view')[placeIndex];
+                //将内容先清空
+                placeUl.innerHTML='';
+
+                getList(userId,applyState,companyId,0,pagesize,placeUl,placeIndex+1,true);
+            });
+            
+            
+
+
 
             //给每一个tab栏注册点击事件
             //点击以后，会刷新该栏目下的项目
             $('.mui-scroll').on('tap','.mui-control-item',function(){
                 
-                console.log(this);
                 //获取到每一个a标签的href指向，通过href得到要作用的ul
                 var aHref=this.getAttribute('href');
                 aHref=aHref.substr(1,aHref.length-1);
-                console.log(aHref);                
                 var aUl=document.getElementById(aHref).querySelector('.mui-table-view');
+
+                //首先清空这个ul
                 aUl.innerHTML='';
+                //根据ul的index属性判断对应的applyState的值
                 var aIndex=aUl.getAttribute('index');
                 //每次点击lastIndex都会初始化
                 lastIndex=0;
@@ -80,44 +136,43 @@ mui.init();
                  * 已完成：4
                  */
                 if(aIndex==0){
-                    applyState='';
-                    
+                    applyState='';//全部
                 }else if(aIndex==1){
-                    applyState=0;
+                    applyState=0;//待审核
                 }else if(aIndex==2){
-                    applyState=1;
+                    applyState=1;//待确认
                 }else if(aIndex==3){
-                    applyState=2;
+                    applyState=2;//待完成
                 }
-                console.log('index='+aIndex+'========applyState='+applyState);
                 getList(userId,applyState,companyId,0,pagesize,aUl,aIndex,true);
                 
+            console.log(lastIndex);
 
             });
             
+            console.log(lastIndex);
             
 
 
             $.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
-                //每一个菜单都会遍历到，导致a自增了四次
-                //a++;
-                //console.log(a);
+                
+                console.log(lastIndex);
+
                 console.log(this);
                 $(pullRefreshEl).pullToRefresh({
                     //下拉刷新
                     down: {
-                        auto:true,
+
                         callback: function() {
                             //下拉刷新，值都恢复到默认值
                             //lastIndex=0;
                             startIndex=0;
+                            console.log(lastIndex);
+                            
                             var self = this;
                             setTimeout(function() {
                                 var ul = self.element.querySelector('.mui-table-view');
                                 var tabIndex=ul.getAttribute('index')-0;
-                                // ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);
-                                // self.endPullDownToRefresh();
-                                // createFragment(ul, index, 5, false);
                                 //ul是作用的ul
                                 //index是指第几个tab
                                 //1是创建的个数
@@ -136,6 +191,7 @@ mui.init();
                     up: {
                         callback: function() {
                             //console.log(a);
+                            console.log(startIndex);
                             var self = this;
                             setTimeout(function() {
                                 var ul = self.element.querySelector('.mui-table-view');
@@ -150,6 +206,8 @@ mui.init();
                                  * 待完成：2               3
                                  * 已完成：4
                                  */
+                                console.log(lastIndex);
+                                
                                 if(tabIndex==0){
                                     applyState='';
                                 }else if(tabIndex==1){
@@ -162,11 +220,10 @@ mui.init();
                                 console.log(lastIndex);
                                 if(lastIndex!=-1){
                                     
-                                    console.log(index);
-                                    console.log('startIndex-----'+startIndex);
-                                    console.log('lastIndex-----'+lastIndex);
+                                    console.log('startIndex1====='+startIndex);
                                     startIndex=lastIndex;//将每次更新后的的lastIndex赋值给startIndex;
                                     //每次刷新都会更新startIndex的值，这样每次下拉结果都不一样
+                                    
                                     getList(userId,applyState,companyId,startIndex,pagesize,ul,index,false);
                                     
 
@@ -183,19 +240,7 @@ mui.init();
                     }
                 });
             });
-            /* var createFragment = function(ul, index, count, reverse) {
-                var length = ul.querySelectorAll('li').length;
-                var fragment = document.createDocumentFragment();
-                var li;
-                for (var i = 0; i < count; i++) {
-                    li = document.createElement('li');
-                    li.className = 'mui-table-view-cell';
-                    li.setAttribute('tab',index+1);
-                    li.setAttribute('index',(length + (reverse ? (count - i) : (i + 1))));
-                    fragment.appendChild(li);
-                }
-                return fragment;
-            };*/
+            //创建列表函数
             function getList(userId,applyState,companyId,startIndex,pageSize,ul,index,reverse){
                         //userId 登录的用户ID
                         //state 点击栏目状态
@@ -221,8 +266,6 @@ mui.init();
                     dataType: "json",
                     timeout: 1000,
                     success: function(response) {
-
-                        
                         var length = ul.querySelectorAll('li').length;
                         var data=response.data,
                             userType=data.userType,//角色类型
@@ -231,10 +274,11 @@ mui.init();
                             page=pageCount/pagesize,//总条数除以每一页的条数等于  总页数
                             reg = /[\u4e00-\u9fa5]/gm;//匹配汉字
                             lastIndex=data.lastIndex;//下一页开始位置，-1表示无下一页
+                                    console.log('lastIndex-----'+lastIndex);
+                            
                             //获取到下一页开始的位置，每次刷新都会更新下一次开始的位置
-                            startIndex++;
+                            // startIndex=startIndex+pageSize;
                             console.log(startIndex);
-                            console.log(page);       
                             
 
                         //fragment为创建的div
@@ -351,7 +395,7 @@ mui.init();
                             var left=li.getElementsByTagName('div')[0];
                             li.appendChild(right);
                             li.insertBefore(a,left);
-                            li.setAttribute('tab',index+1);
+                            li.setAttribute('tab',+index+1);
                             //li.setAttribute('index',(length + (reverse ? (pageSize - i) : (i + 1))));
                             
                             if(reverse===true){//下拉刷新
@@ -387,7 +431,6 @@ mui.init();
 
                 });
                 //console.log(fragment);
-                console.log(startIndex);
             }
 
         });
