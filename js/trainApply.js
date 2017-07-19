@@ -1,16 +1,18 @@
 mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+        //设置time0和time1的默认值
+        var trainFate=0;
+        var timeStr0=timeStr1='2017/12/12';
+        
+        
         (function ($) {
             $.init();
             var result0 = $('#result0')[0];
             var result1 = $('#result1')[0];
             var btns = $('.btn');
-            var timeStr0;
-            var timeStr1;
-            //设置time0和time1的默认值
             var time0=time1=Date.parse('2017/12/12');//时间选择框中的默认选项
-            console.log(time0);
+
             var applyForm=document.getElementById('applyForm');
             var fate=applyForm.querySelector('#fate');
             
@@ -45,7 +47,7 @@ mui.init({
                             timeStr0=timeStr0.substr(0,timeStr0.length-1);
                             console.log(timeStr0);
                             time0=Date.parse(timeStr0);
-                            console.log(time0);
+                            console.log(time0);//开始时间
                             
                         } else {
                             result1.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
@@ -54,7 +56,7 @@ mui.init({
                             timeStr1=timeStr1.substr(0,timeStr1.length-1);
                             console.log(timeStr1);
                             time1=Date.parse(timeStr1);
-                            console.log(time1);
+                            console.log(time1);//结束时间
                         }
                         var timeDiffer=time1-time0;
                         console.log('time0===='+time0);
@@ -65,6 +67,7 @@ mui.init({
                         }else{
                             fate.innerHTML=timeDiffer/1000/3600/24+'天';
                             fate.style.color='#565656';
+                            trainFate=timeDiffer/1000/3600/24;
                         }
                         /* 
                          * 返回 false 可以阻止选择框的关闭

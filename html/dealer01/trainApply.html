@@ -85,6 +85,14 @@
                         <span>申请编号：</span>
                         <span id="apNum">452221112332111232</span>
                     </div>
+                    <div class="lr type">
+                        <span class="fl">培训机构：</span>
+                        <div class="right">
+                            <select id="organization">
+                                <!--<option value="大会2" name="organization">幼儿园2</option>-->
+                            </select>
+                        </div>
+                    </div>
                     <div class="lr">
                         <span class="fl">培训时间：</span>
                         <div class="right trainTime">
@@ -105,64 +113,32 @@
                         <span class="fl">培训科目：</span>
                         <div class="right">
                             <ul class="pitch clearfix" id="delete">
-                                <li>
-                                    <a href="javascript:void(0)">狮王英语</a>
-                                    <em></em>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">狮王英语</a>
-                                    <em></em>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">狮王英语</a>
-                                    <em></em>
-                                </li>
                                 <li class="add">
                                     <em id="add"></em>
                                 </li>
                             </ul>
 
                             <ul class="option clearfix" id="option">
-                                <li>
-                                    <a href="javascript:void(0)">汇海蒙数</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">幼儿英语</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">幼儿英语</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">幼儿英语</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="lr type">
-                        <span class="fl">培训机构：</span>
-                        <div class="right">
-                            <select>
-                            <option value="大会1">幼儿园1</option>
-                            <option value="大会2">幼儿园2</option>
-                        </select>
-                        </div>
-                    </div>
+                    
                     <div class="lr type">
                         <span class="fl">培训类型：</span>
                         <div class="right">
-                            <select>
-                            <option value="大会1">大会1</option>
-                            <option value="大会2">大会2</option>
-                        </select>
+                            <select id="trainType">
+                                <option value="1" name="trainType">大会1</option>
+                                <option value="2" name="trainType">大会2</option>
+                            </select>
                         </div>
                     </div>
                     <div class="lr explain">
                         <span class="fl">详细说明：</span>
                         <div class="right">
-                            <textarea rows="" cols="" placeholder="具体要求说明"></textarea>
+                            <textarea rows="" cols="" placeholder="具体要求说明" name="explain" id="explain"></textarea>
                         </div>
                     </div>
-                    <button onclick="window.location.href='../trainAudit.html?trainAudit=1';return false" type="submit">提交</button>
+                    <button onclick="return false" type="submit" id="subApply">提交</button>
                 </div>
             </form>
 

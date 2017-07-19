@@ -97,8 +97,8 @@
                         </div>
                     </div>
                     <div class="radioBox" id="radioBox">
-                        <input type="radio" name="apt" value="yes" id="radio1" checked>
-                        <input type="radio" name="apt" value="no" id="radio2">                        
+                        <input type="radio" name="apt" value="1" id="radio1" checked>
+                        <input type="radio" name="apt" value="2" id="radio2">                        
                         <label name="radio1" for="radio1" class="check">同意</label>
                         <label name="radio2" for="radio2">拒绝</label>
                     </div>
@@ -110,7 +110,7 @@
             <p id="showArea">
                 条件符合，同意培训
             </p>
-            <button type="submit" onclick="window.location.href='../trainAudit.html?trainAudit=2';return false">提交</button>
+            <button type="submit" onclick="return false" id="subApt">提交</button>
         </div>
     </form>
     

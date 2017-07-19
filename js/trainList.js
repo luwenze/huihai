@@ -6,6 +6,7 @@ mui.init();
         window.top.location.href=this.href;
     });
 
+    
             
 			
 			
@@ -16,9 +17,10 @@ mui.init();
         //tab栏注册点击事件
         
         //初始化
-        var userId=71993;//登陆的用户Id
+        var userId=71940;//登陆的用户Id
+        var companyId=71473;//用户登录的机构Id
+        var trainId;
         var applyState='';//点击栏目状态，无时为全部，1待确认，2、3待完成，4已完成
-        var companyId=72252;//用户登录的机构Id
         var pagesize=5;//控制每一次加载的条数
         var lastIndex=0;//初始时默认为0
         var startIndex=0;//初始时第一页为0
@@ -266,6 +268,7 @@ mui.init();
                     dataType: "json",
                     timeout: 1000,
                     success: function(response) {
+                        console.log(response);
                         var length = ul.querySelectorAll('li').length;
                         var data=response.data,
                             userType=data.userType,//角色类型
@@ -327,7 +330,7 @@ mui.init();
                                             +'<span class="applyId">'+applyNumber+'</span>'
                                             +'<span id="state1" class="state">【待确定】</span>'
                                         +'</div>';
-                            }else if(state===2){
+                            }else if(state===2||3){
                                 numStr='<div class="number">'
                                             +'<span>申请编号:</span>'
                                             +'<span class="applyId">'+applyNumber+'</span>'
@@ -384,13 +387,29 @@ mui.init();
                                     +'</div>'
                                 +'</div>';
                             //3.设置跳转的a标签
+                            //之后如果  删掉文件地址重新写  就用webstrom打开
                             var a=document.createElement('a');
-                            a.setAttribute('href','../trainAudit.html?trainAudit='+state);
+                            console.log(item.step);
+                            //判断该用户可以进行的操作
+                            if(item.step==-1){
+                                a.setAttribute('href','../trainAudit.html?trainAudit='+state);
+                            }else if(item.step==2){
+                                a.setAttribute('href','./aptitude.html?userId='+userId+'&companyId='+companyId+'&trainId='+trainId);
+                            }else if(item.step==3){
+                                a.setAttribute('href','./confirmPro.html');
+                            }else if(item.step==4){
+                                a.setAttribute('href','./audit.html');
+                            }else if(item.step==5){
+                                a.setAttribute('href','./opinion.html');
+                            }
+                            
 
 
                             //4.创建一个li用来接收制作好的元素与字符串
                             var li=document.createElement('li');
                             li.className="mui-table-view-cell";
+                            trainId=item.id;
+                            li.id=trainId//动态设置培训id
                             li.innerHTML=strLeft;
                             var left=li.getElementsByTagName('div')[0];
                             li.appendChild(right);
