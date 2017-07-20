@@ -43,7 +43,7 @@ jQuery(function(){
                 dataType: "json",
                 success: function (response) {
                     console.log(response);
-                    //window.location.href='../trainAudit.html?trainAudit=2';
+                    window.location.href='../trainAudit.html?trainAudit=2&trainId='+trainId;
                     return false;
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

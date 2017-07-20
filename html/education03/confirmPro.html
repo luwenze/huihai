@@ -62,45 +62,45 @@
             <li>
                 <h3>
                     <span>申请编号：</span>
-                    <span>452221112332111232</span>
+                    <span id="applyNum">452221112332111232</span>
                 </h3>
                 <div class="submit">
                     <div>
                         <span>申请人：</span>
-                        <span>宋立</span>
+                        <span id="realName">宋立</span>
                     </div>
                     <div>
                         <span>所属区域：</span>
-                        <span>湖北武汉</span>
+                        <span id="cityStr">湖北武汉</span>
                     </div>
                     <div>
                         <span>联系电话：</span>
-                        <span>13975887547</span>
+                        <span id="telephone">13975887547</span>
                         <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
                     </div>
                     <div>
                         <span>培训时间：</span>
-                        <span>2017年12月12日-2018年12月12日</span>
+                        <span><span id="beginTime">2017年12月12日</span>-<span id="endTime">2018年12月12日</span></span>
                     </div>
                     <div>
                         <span>培训天数：</span>
-                        <span>365天</span>
+                        <span id="days">365天</span>
                     </div>
                     <div>
                         <span>培训科目：</span>
-                        <span>幼儿英语 | 幼儿英语 | 幼儿英语</span>
+                        <span id="items">幼儿英语 | 幼儿英语 | 幼儿英语</span>
                     </div>
                     <div>
                         <span>培训类型：</span>
-                        <span>大会</span>
+                        <span id="type">大会</span>
                     </div>
                     <div class="lr">
                         <span class="fl">详细说明：</span>
-                        <div class="right">可能会说可能不会说，知道或者不知道，没可能或者有可能，不对或者对的</div>
+                        <div class="right" id="remark">可能会说可能不会说，知道或者不知道，没可能或者有可能，不对或者对的</div>
                     </div>
                     <div class="time">
                         <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                        <span>2017年12月19日</span>
+                        <span id="createTime">2017年12月19日</span>
                     </div>
                 </div>
             </li>
@@ -111,20 +111,20 @@
                 <div class="submit">
                     <div>
                         <span>审批人：</span>
-                        <span>叶虎</span>
+                        <span id="realPeo">叶虎</span>
                     </div>
                     <div>
                         <span>联系电话：</span>
-                        <span>13975887547</span>
+                        <span id="conTel">13975887547</span>
                         <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
                     </div>
                     <div class="lr">
                         <span class="fl">审核批注：</span>
-                        <div class="right">经过电话核对，了解申请方需求，以及初步信息。条件符合，同意培训</div>
+                        <div class="right" id="auditRemark">经过电话核对，了解申请方需求，以及初步信息。条件符合，同意培训</div>
                     </div>
                     <div class="time">
                         <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                        <span>2017年12月19日</span>
+                        <span id="auditTime">2017年12月19日</span>
                     </div>
                 </div>
             </li>
@@ -140,7 +140,7 @@
                 教研部制定方案期间，如存在冲突，经双方协调需修改原始 申请表单，请点击上方调整原始表单。
             </p>
 
-            <form class="applyForm">
+            <form class="applyForm" id="comfirmForm">
                 <div class="submit">
                     <div class="lr hide">
                         <span class="fl">培训时间：</span>
@@ -151,28 +151,15 @@
                             <span class="line"></span>
                             <button id='end' data-options='{"type":"date"}' class="btn mui-btn mui-btn-block mybtn">
                                 <div id='result1' class="ui-alert myalert">2017年12月12日</div>
-                        </button>
+                            </button>
                         </div>
                     </div>
-                    <div class="lr fate hide">
+                    <div class="lr hide">
                         <span class="fl">培训天数：</span>
-                        <div class="right">
-                            <select>
-                                <option value="365">365</option>
-                                <option value="364">364</option>
-                            </select>
-                        </div>
+                        <span style="line-height:2.3rem;font-size:0.75rem;padding-left:0.15rem;" id="fate">365</span>
                     </div>
 
-                    <div class="lr fate hide">
-                        <span class="fl">参训人数：</span>
-                        <div class="right">
-                            <select>
-                                <option value="50">50</option>
-                                <option value="60">60</option>
-                            </select>
-                        </div>
-                    </div>
+                    
 
                     <div class="lr object hide">
                         <span class="fl">培训科目：</span>
@@ -233,38 +220,32 @@
                         </div>
                     </div>
 
-                    <div class="lr site hide">
-                        <span class="fl">培训地点：</span>
-                        <div class="right">
-                            <input type="" name="" value="" placeholder="">
-                        </div>
-                    </div>
-
+                    
                     <div class="lr type hide">
                         <span class="fl">培训类型：</span>
                         <div class="right">
                             <select>
-                            <option value="大会1">大会1</option>
-                            <option value="大会2">大会2</option>
-                        </select>
+                                <option value="大会1">大会1</option>
+                                <option value="大会2">大会2</option>
+                            </select>
                         </div>
                     </div>
                     <div class="lr type">
                         <span class="fl">培训老师：</span>
                         <div class="right">
-                            <select>
-                                <option value="大会1">程才1</option>
-                                <option value="大会2">程才2</option>
+                            <select id="trainTeacher">
+                                <!--<option value="程才1">程才1</option>
+                                <option value="程才2">程才2</option>-->
                             </select>
                         </div>
                     </div>
                     <div class="lr explain">
                         <span class="fl">备注说明：</span>
                         <div class="right">
-                            <textarea rows="" cols="" placeholder="条件符合，同意培训"></textarea>
+                            <textarea rows="" cols="" placeholder="条件符合，同意培训" id="editExplain"></textarea>
                         </div>
                     </div>
-                    <button type="submit" onclick="window.location.href='../trainAudit.html?trainAudit=3';return false">提交</button>
+                    <button type="submit" onclick="window.location.href='../trainAudit.html?trainAudit=3';return false" id="subComPro">提交</button>
 
                 </div>
 
@@ -283,7 +264,7 @@
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../../lib/jquery/jquery.min.js"></script>
-    <script src="../../js/trainPlay1.js"></script>
+    <!--<script src="../../js/trainPlay1.js"></script>-->
     <script src="../../js/common.js"></script>
     <script src="../../js/trainAudit.js"></script>
     <script src="../../js/confirmPro.js"></script>
@@ -291,7 +272,7 @@
     <!--时间选择模块-->
     <script src="../../lib/mui/js/mui.min.js"></script>
     <script src="../../lib/mui/js/mui.picker.min.js"></script>
-    <script src="../../js/confirmPro1.js"></script>
+    <script src="../../js/trainApply.js"></script>
     <script src="../../js/muiCom.js"></script>
 
 

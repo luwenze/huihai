@@ -35,7 +35,7 @@
 <body>
     <header id="header">
         <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
-        <h3>培训审核</h3>
+        <h3>意见反馈</h3>
     </header>
     <ul class="flow">
         <li>
@@ -67,64 +67,29 @@
                     <b class="edit fr"><img src="../../images/icon-edit.png" ></b>
                 </h3>
                 <div class="submit">
-                    <div>
-                        <span>培训讲师：</span>
-                        <span>程才</span>
-                    </div>
-                    <div>
-                        <span>培训人数：</span>
-                        <span>40人</span>
-                    </div>
-                    <div>
-                        <span>培训日期：</span>
-                        <span>2017年12月12日 15:00-18:20</span>
-                    </div>
-                    <div>
-                        <span>培训类型：</span>
-                        <span>大会</span>
-                    </div>
-                    <div>
-                        <span>培训时长：</span>
-                        <span>3小时20分钟</span>
-                    </div>
-                    <div>
-                        <span>培训区域：</span>
-                        <span>湖北省 武汉市 洪山区</span>
-                    </div>
-                    <div>
-                        <span>培训地点：</span>
-                        <span>光谷世界城</span>
-                    </div>
-                    <div>
-                        <span>培训科目：</span>
-                        <span>幼儿英语 | 幼儿英语 | 幼儿英语</span>
-                    </div>
-                    <div>
-                        <span>培训单位：</span>
-                        <span>红太阳幼儿园</span>
-                    </div>
-                    <div>
-                        <span>负责人：</span>
-                        <span>李诗佳</span>
-                    </div>
-                    <div>
-                        <span>联系电话：</span>
-                        <span>13975887547</span>
-                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
-                    </div>
-                    <div>
-                        <span>园所规模：</span>
-                        <span>600人</span>
-                    </div>
-                    <div class="time">
-                        <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                        <span>2017年12月19日</span>
-                    </div>
+                   
+                </div>
+            </li>
+            <li style="display:none;">
+                <h3>
+                    <span>意见反馈</span>
+                </h3>
+                <div class="submit">
+                    
+                </div>
+            </li>
+        </ul>
+        <ul class="gray" id="gray" style="display:none;">
+            <li>
+                <h3>意见反馈</h3>
+                <div>
+                    <img src="../../images/auditing.png" alt="">
+                    <span>培训暂未完成，请随时关注！</span>
                 </div>
             </li>
         </ul>
     </div>
-    <div class="main">
+    <div class="main" style="display:none;">
         <div class="frame">
             <form class="applyForm">
                 <div id="star0">
@@ -167,7 +132,8 @@
 心专业，找培训来这里就对了" id="opinion"></textarea>
                         </div>
                     </div>
-                    <button type="submit" onclick="window.location.href='../formDetails.html';return false">提交</button>
+                    <button type="button" id="btnFeedBack" >提交</button>
+                    <!--onclick="window.location.href='../formDetails.html';return false"-->
                 </div>
             </form>
         </div>
@@ -185,14 +151,8 @@
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../js/common.js"></script>
-    <script src="../../js/trainAudit.js"></script>
-    <script src="../../js/confirmPro.js"></script>
     <script src="../../js/opinion.js"></script>
 
-    <!--时间选择模块-->
-    <script src="../../lib/mui/js/mui.min.js"></script>
-    <script src="../../lib/mui/js/mui.picker.min.js"></script>
-    <script src="../../js/muiCom.js"></script>
 
 
 </body>

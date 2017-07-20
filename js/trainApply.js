@@ -13,7 +13,7 @@ mui.init({
             var btns = $('.btn');
             var time0=time1=Date.parse('2017/12/12');//时间选择框中的默认选项
 
-            var applyForm=document.getElementById('applyForm');
+            var applyForm=document.getElementById('applyForm')||document.getElementById('comfirmForm');
             var fate=applyForm.querySelector('#fate');
             
 

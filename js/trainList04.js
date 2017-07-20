@@ -10,18 +10,18 @@ mui.init();
             
 			
 			
-
+    //要修改list04点击进去样式的  a 标签的地址
 
 
     (function($) {
         //tab栏注册点击事件
         
         //初始化
-        var userId=71941;//登陆的用户Id
+        var userId=71993;//登陆的用户Id
         var companyId=71473;//用户登录的机构Id
         var trainId;//培训id
         var step;//可以操作的步骤
-        var applyState='';//点击栏目状态，无时为全部，1待确认，2、3待完成，4已完成
+        var applyState=5;//点击栏目状态，5为全部，6待确认，7待完成，8已完成
         var pagesize=5;//控制每一次加载的条数
         var lastIndex=0;//初始时默认为0
         var startIndex=0;//初始时第一页为0
@@ -47,6 +47,8 @@ mui.init();
             //在这里把所有元素都初始加载上
             var all=document.querySelectorAll('.mui-table-view');
             console.log(all);
+            console.log(userId);
+            console.log(applyState);
             getList(userId,applyState,companyId,0,pagesize,all[0],0,true);
 
 
@@ -67,11 +69,11 @@ mui.init();
 
                 //通过index确定对应的applyState的值
                 if(placeIndex==0){
-                    applyState='';//全部
+                    applyState=5;//全部
                 }else if(placeIndex==1){
-                    applyState=0;//待审核
+                    applyState=6;//待审核
                 }else if(placeIndex==2){
-                    applyState=1;//带确认
+                    applyState=7;//带确认
                 }
                 //找到对应的placeUl
                 console.log(placeIndex);
@@ -96,11 +98,11 @@ mui.init();
 
                 //通过index确定对应的applyState的值
                 if(placeIndex==1){
-                    applyState=0;//待审核
+                    applyState=6;//待审核
                 }else if(placeIndex==2){
-                    applyState=1;//待确定
+                    applyState=7;//待确定
                 }else if(placeIndex==3){
-                    applyState=2;//带完成
+                    applyState=8;//带完成
                 }
                 //找到对应的placeUl
                 console.log(placeIndex);
@@ -132,20 +134,20 @@ mui.init();
                 lastIndex=0;
                 /**
                  * state:               index
-                 * 全部：''                0
-                 * 待审核：0               1
-                 * 待确认：1               2
-                 * 待完成：2               3
-                 * 已完成：4
+                 * 全部：5                0
+                 * 待审核：6               1
+                 * 待确认：7               2
+                 * 待完成：7               3
+                 * 已完成：8
                  */
                 if(aIndex==0){
-                    applyState='';//全部
+                    applyState=5;//全部
                 }else if(aIndex==1){
-                    applyState=0;//待审核
+                    applyState=6;//待审核
                 }else if(aIndex==2){
-                    applyState=1;//待确认
+                    applyState=7;//待确认
                 }else if(aIndex==3){
-                    applyState=2;//待完成
+                    applyState=8;//待完成
                 }
                 getList(userId,applyState,companyId,0,pagesize,aUl,aIndex,true);
                 
@@ -212,13 +214,13 @@ mui.init();
                                 console.log(lastIndex);
                                 
                                 if(tabIndex==0){
-                                    applyState='';
+                                    applyState=5;
                                 }else if(tabIndex==1){
-                                    applyState=0;
+                                    applyState=6;
                                 }else if(tabIndex==2){
-                                    applyState=1;
+                                    applyState=7;
                                 }else if(tabIndex==3){
-                                    applyState=2;
+                                    applyState=8;
                                 }
                                 console.log(lastIndex);
                                 if(lastIndex!=-1){
@@ -303,7 +305,7 @@ mui.init();
                             if(item===undefined){
                                 return;
                             }
-                            applyNumber=item.applyNumber;//申请编号
+                            applyNumber=item.applyNumber||item.planNumber;//申请编号
                             cityStr=item.cityStr;
                             //cityStr=item.cityStr.split(' ');
                             //cityStr=(cityStr[0]?cityStr[0]:)+'省'+cityStr[1]+'市'+(cityStr[2]?cityStr[2]+'区':'');//申请区域
@@ -319,31 +321,56 @@ mui.init();
 
                             //右边number部分字符串
                             var numStr='';
-                            if(state===0){
-                                numStr='<div class="number">'
-                                            +'<span>申请编号:</span>'
-                                            +'<span class="applyId">'+applyNumber+'</span>'
-                                            +'<span id="state0" class="state">【待审核】</span>'
-                                        +'</div>';
-                            }else if(state===1){
-                                numStr='<div class="number">'
-                                            +'<span>申请编号:</span>'
-                                            +'<span class="applyId">'+applyNumber+'</span>'
-                                            +'<span id="state1" class="state">【待确定】</span>'
-                                        +'</div>';
-                            }else if(state===2||3){
-                                numStr='<div class="number">'
-                                            +'<span>申请编号:</span>'
-                                            +'<span class="applyId">'+applyNumber+'</span>'
-                                            +'<span id="state2" class="state">【待完成】</span>'
-                                        +'</div>';
-                            }else if(state===4){
-                                numStr='<div class="number">'
-                                            +'<span>申请编号:</span>'
-                                            +'<span class="applyId">'+applyNumber+'</span>'
-                                            +'<span id="state3" class="state">【已完成】</span>'
-                                        +'</div>';
+                            console.log('applyState===='+applyState);
+                            console.log(state);
+                            if(applyState==5){
+                                if(state===0){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state0" class="state">【待审核】</span>'
+                                            +'</div>';
+                                }else if(state===1){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state1" class="state">【待确定】</span>'
+                                            +'</div>';
+                                }else if(state===2||3){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state2" class="state">【待完成】</span>'
+                                            +'</div>';
+                                }else if(state===4){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state3" class="state">【已完成】</span>'
+                                            +'</div>';
+                                }
+                            }else{
+                                if(state===0){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state1" class="state">【待培训】</span>'
+                                            +'</div>';
+                                }else if(state===1){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state0" class="state">【待反馈】</span>'
+                                            +'</div>';
+                                }else if(state===2){
+                                    numStr='<div class="number">'
+                                                +'<span>申请编号:</span>'
+                                                +'<span class="applyId">'+applyNumber+'</span>'
+                                                +'<span id="state3" class="state">【已完成】</span>'
+                                            +'</div>';
+                                }
                             }
+                            
 
                             //右边area部分字符串
                             var areaStr='<div class="area">'
@@ -396,7 +423,6 @@ mui.init();
                             if(item.step==-1){
                                 a.setAttribute('href','../trainAudit.html?trainAudit='+state);
                             }else if(item.step==1){
-                                //返回给我的是1，但是里面没有step为1的情况
                                 a.setAttribute('href','./aptitude.html?userId='+userId+'&companyId='+companyId+'&trainId='+trainId);
                             }else if(item.step==2){
                                 step=item.step;
