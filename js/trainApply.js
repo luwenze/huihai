@@ -1,3 +1,4 @@
+var timeDiffer;
 mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
@@ -58,7 +59,7 @@ mui.init({
                             time1=Date.parse(timeStr1);
                             console.log(time1);//结束时间
                         }
-                        var timeDiffer=time1-time0;
+                        timeDiffer=time1-time0;
                         console.log('time0===='+time0);
                         console.log('time1====='+time1);
                         if(timeDiffer<=0){
@@ -66,6 +67,7 @@ mui.init({
                             fate.style.color='#d42121';
                         }else{
                             fate.innerHTML=timeDiffer/1000/3600/24+'天';
+                            console.log('timeDiffer/1000/3600/24================'+timeDiffer/1000/3600/24);
                             fate.style.color='#565656';
                             trainFate=timeDiffer/1000/3600/24;
                         }

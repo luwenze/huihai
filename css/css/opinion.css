@@ -1,0 +1,57 @@
+#star0,
+#star1 {
+  position: relative;
+  width: 72%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#star0 > ul,
+#star1 > ul,
+#star0 span,
+#star1 span {
+  float: left;
+  display: inline;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  color: #565656;
+  font-size: 0.83rem;
+}
+#star0 > ul,
+#star1 > ul {
+  margin: 0 0.5833333333333334rem;
+  margin-top: 0.3rem;
+}
+#star0 > ul > li,
+#star1 > ul > li {
+  float: left;
+  width: 1.6666666666666667rem;
+  cursor: pointer;
+  text-indent: -833.25rem;
+  background: url('../images/heart.png') no-repeat;
+  background-size: 1.25rem 3.5rem;
+}
+#star0 > ul > li.on,
+#star1 > ul > li.on {
+  background-position: 0 -2.33333333rem;
+}
+#star0 > span.strong,
+#star1 > span.strong {
+  color: #f60;
+  padding-left: 0.8333333333333334rem;
+}
+#star0 > p,
+#star1 > p {
+  position: absolute;
+  top: 1.6666666666666667rem;
+  width: 13.25rem;
+  height: 5rem;
+  display: none;
+  padding: 0.5833333333333334rem 0.8333333333333334rem 0;
+}
+#star0 > p > em,
+#star1 > p > em {
+  color: #f60;
+  display: block;
+  font-style: normal;
+}

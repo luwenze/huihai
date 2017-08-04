@@ -1,0 +1,88 @@
+body {
+  height: auto;
+  position: relative;
+}
+body > .popup {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+body > .popup > .popupBox {
+  width: 19rem;
+  height: 16rem;
+  background-color: #FFFFFF;
+  border-radius: 0.83rem;
+  margin: 0 auto;
+  margin-top: 50%;
+  padding: 0 1rem;
+}
+body > .popup > .popupBox > h3 {
+  font-size: 15px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #04A6C1;
+  width: 100%;
+}
+body > .popup > .popupBox > .popup-card {
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group {
+  overflow: hidden;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group #domBox {
+  margin-top: 1px;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group #domBox > li {
+  cursor: pointer;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group #domBox > li > a {
+  color: #565656;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group .radioBox {
+  border-top: none;
+  padding-top: 15px;
+  margin-bottom: 48px;
+  position: relative;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group .radioBox > button {
+  position: absolute;
+  border: none;
+  background-color: #04A6C1;
+  width: 66px;
+  text-align: center;
+  display: block;
+  left: 52%;
+  color: #fff;
+}
+body > .popup > .popupBox > .popup-card .mui-input-group .radioBox > button:first-child {
+  margin-left: -80px;
+}
+.main > .frame {
+  padding-top: 0.8333333333333334rem;
+}
+.main > .frame > .applyForm > .submit > .date > .right {
+  margin-top: 0.4166666666666667rem;
+}
+.main > .frame > .applyForm > .submit > .date > .right > #demo5 {
+  width: 22%;
+}
+.main > .frame > .applyForm > .submit > .date > .right > #demo6 {
+  width: 22%;
+}
+.main > .frame > .applyForm > .submit > .gap > .right {
+  margin-top: 0.25rem;
+}
+.main > .frame > .applyForm > .submit > .site > .right {
+  padding-top: 0.25rem;
+}
+.main > .frame > .applyForm > .submit > .site > .right > input {
+  font-size: 0.75rem;
+}

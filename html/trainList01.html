@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Access-Control-Allow-Origin" content=" ">
+    <meta http-equiv="content-security-policy">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
+    <!--<meta http-equiv="refresh" content="5">页面自动刷新-->
+
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/trainList.css">
+    <style>
+        .mui-bar~.mui-content .mui-fullscreen {
+            top: 3.6666666666666665rem;
+            height: auto;
+        }
+
+        .mui-pull-top-tips {
+            position: absolute;
+            top: 2.6666666666666667rem;
+            left: 50%;
+            margin-left: -2.0833333333333335rem;
+            width: 3.3333333333333335rem;
+            height: 3.3333333333333335rem;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .mui-bar~.mui-pull-top-tips {
+            top: 2rem;
+        }
+
+        .mui-pull-top-wrapper {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: block;
+            text-align: center;
+            background-color: #efeff4;
+            border: 1px solid #ddd;
+            border-radius: 2.0833333333333335rem;
+            background-clip: padding-box;
+            box-shadow: 0 0.3333333333333333rem 0.8333333333333334rem #bbb;
+            overflow: hidden;
+        }
+
+        .mui-pull-top-tips.mui-transitioning {
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms;
+        }
+
+        .mui-pull-top-tips .mui-pull-loading {
+            /*-webkit-backface-visibility: hidden;
+            -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;*/
+            margin: 0;
+        }
+
+        .mui-pull-top-wrapper .mui-icon,
+        .mui-pull-top-wrapper .mui-spinner {
+            margin-top: 0.58rem;
+        }
+
+        .mui-pull-top-wrapper .mui-icon.mui-reverse {
+            /*-webkit-transform: rotate(180deg) translateZ(0);*/
+        }
+
+        .mui-pull-bottom-tips {
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 3.33rem;
+            color: #777;
+            margin-bottom: 2rem;
+            /*拉到最下面的时候不会被下方的菜单遮住*/
+        }
+
+        .mui-pull-bottom-wrapper .mui-pull-loading {
+            font-size: 0.8rem;
+        }
+
+        .mui-pull-top-canvas {
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 3.3333333333333335rem;
+            box-shadow: 0 0.33rem 0.83rem #bbb;
+            width: 3.33rem;
+            height: 3.33rem;
+            margin: 0 auto;
+        }
+
+        .mui-pull-top-canvas canvas {
+            width: 3.33rem;
+        }
+
+        .mui-slider-indicator.mui-segmented-control {
+            background-color: #efeff4;
+        }
+    </style>
+    <!-- 编译less文件的js -->
+    <!--<script src="../../lib/less/less.js"></script>-->
+</head>
+
+<body>
+    <header id="header">
+        <!--<div  id="demo">返回</div>-->
+        <a href="javascript:void(0);" class="back" id="demo"><img src="../images/back-font.png" alt=""><span>返回</span></a>
+        <h3>培训列表</h3>
+        <a href="dealer01/trainApply.html" class="apply" id="applyAtag"><span>申请</span></a>
+    </header>
+
+    <div class="mui-content my-content">
+        <div id="slider" class="mui-slider mui-fullscreen my-full">
+            <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="sort mui-scroll" id="sort">
+                    <a class="mui-control-item mui-active" href="#item1mobile">全部</a>
+                    <a class="mui-control-item" href="#item2mobile">待审核</a>
+                    <a class="mui-control-item" href="#item3mobile">待确定</a>
+                    <a class="mui-control-item" href="#item4mobile">待完成</a>
+                </div>
+            </div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active" index="0">
+                    <div id="scroll1" class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList" index="0">
+                                <!--全部-->
+                                <!--<li class="mui-table-view-cell" id="4" tab="1" index="1"><a href="./trainAudit.html?userId=71993&amp;companyId=72252&amp;trainAudit=3&amp;userType=14&amp;trainId=4"></a>
+                                    <div class="fl">
+                                        <div class="time">
+                                            <div><span class="date">10</span></div>
+                                            <div><span class="month">07月</span></div>
+                                            <div><span class="year">2017</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="number"><span>申请编号:</span><span class="applyId">201707069560510004</span><span id="state2" class="state">【待完成】</span></div>
+                                        <div class="area"><b></b><span>区域:</span><span>湖北武汉洪山</span></div>
+                                        <div class="project">
+                                            <div class="fl">培训科目:</div>
+                                            <div class="right clearfix"><span>蒙式数学 | </span><span>蒙氏阅读 | </span></div>
+                                        </div>
+                                        <div class="people"><b></b><span>申请人:</span><span>曾梦如</span></div>
+                                    </div>
+                                </li>-->
+
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content" index="1">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList" index="1">
+                                <!--待审核-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item3mobile" class="mui-slider-item mui-control-content" index="2">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList" index="2">
+                                <!--待确定-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item4mobile" class="mui-slider-item mui-control-content" index="3">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll list">
+                            <ul class="mui-table-view applyList" index="3">
+                                <!--待完成-->
+                                <!--已完成在全部里面，没有自己的分类-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/mui/js/mui.pullToRefresh.js"></script>
+    <script src="../lib/mui/js/mui.pullToRefresh.material.js"></script>
+    <script src="../js/trainList.js"></script>
+    <!--<script src="../js/muiCom.js"></script>-->
+    
+
+
+
+</body>
+
+</html>

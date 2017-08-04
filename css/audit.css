@@ -1,0 +1,200 @@
+body{
+  padding-top: 5rem;
+}
+.msgList {
+  background-color: #fff;
+}
+.msgList > h3 {
+  padding-left: 2.2rem;
+  position: relative;
+  height: 1.8rem;
+}
+.msgList > h3 > em {
+  position: absolute;
+  display: inline-block;
+  width: 0.83rem;
+  height: 0.83rem;
+  background-repeat: no-repeat;
+  background-size: 0.83rem 0.83rem;
+  top: 0.45rem;
+  left: 1rem;
+}
+.msgList > h3 > em.applyman {
+  background-image: url('../images/applyman.png');
+}
+.msgList > h3 > em.applylist {
+  background-image: url('../images/apply-list.png');
+}
+.msgList > h3 > span {
+  font-size: 0.83rem;
+  color: #565656;
+  line-height: 1.8rem;
+}
+.msgList > h3 > a {
+  display: inline-block;
+  width: 1.4166666666666667rem;
+  height: 1.4166666666666667rem;
+}
+.msgList > h3 > a > img {
+  width: 1.4166666666666667rem;
+  height: 1.4166666666666667rem;
+  vertical-align: middle;
+}
+.msgList > h3 + h3 {
+  border-top: 0.08333333333333333rem solid #F2F2F2;
+}
+.msgList .mui-table h4,
+.msgList .mui-table h5,
+.msgList .mui-table .mui-h5,
+.msgList .mui-table .mui-h6,
+.msgList .mui-table p {
+  margin-top: 0;
+}
+.msgList .mui-table h4 {
+  line-height: 1.75rem;
+  font-weight: normal;
+  color: #565656;
+  font-size: 1rem;
+}
+.msgList .mui-table .oa-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.msgList .mui-table .oa-icon-star-filled {
+  color: #f14e41;
+}
+.msgList .my-h5 {
+  font-size: 1rem;
+}
+.msgList .table {
+  border-bottom: 0.083rem solid #DFDFDF;
+  padding-right: 0.5rem;
+}
+.msgList .table > .mui-table-cell > .time {
+  font-size: 0.75rem;
+  position: relative;
+  padding-left: 1rem;
+}
+.msgList .table > .mui-table-cell > .time::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0.8333333333333334rem;
+  height: 0.8333333333333334rem;
+  background: url('../images/time.png') no-repeat;
+  background-size: 0.8333333333333334rem 0.8333333333333334rem;
+  top: 0.6rem;
+  left: 0;
+}
+.msgList .mui-col-my {
+  width: 30%;
+}
+.msgList .mui-col-my > span {
+  font-size: 0.8rem;
+}
+.msgList .words {
+  color: #BDBDBD;
+}
+.msgList .list {
+  padding-left: 2rem;
+  line-height: 2rem;
+  position: relative;
+}
+.msgList .list > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.msgList .list::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #04A6C1;
+  top: 50%;
+  margin-top: -0.25rem;
+  left: 0.75rem;
+}
+.msgList .list::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.08rem;
+  height: 4.2rem;
+  background-color: #04A6C1;
+  top: 50%;
+  left: 0.96rem;
+}
+.msgList .list:last-of-type::after {
+  display: none;
+}
+.msgList .check {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  height: auto;
+  padding-top: 0.6666666666666666rem;
+}
+.msgList .check > .checkBox {
+  position: absolute;
+  width: 50%;
+  height: 1.6666666666666667rem;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 2;
+}
+.msgList .check > button {
+  display: block;
+  margin: 0 auto;
+  background-color: #04A6C1;
+  color: #fff;
+  width: 68%;
+  height: 2.0833333333333335rem;
+  line-height: 0.5833333333333334rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.8rem;
+  border-radius: 0.4166666666666667rem;
+}
+.msgList .check > button > em {
+  display: inline-block;
+  width: 1.0833333333333333rem;
+  height: 1.0833333333333333rem;
+  background-image: url('../images/apply.png');
+  background-repeat: no-repeat;
+  background-size: 1.0833333333333333rem 1.0833333333333333rem;
+  vertical-align: middle;
+  margin-right: 0.3333333333333333rem;
+}
+.msgList .check > span {
+  display: inline-block;
+  position: relative;
+  padding-left: 1.4166666666666667rem;
+  font-size: 0.8333333333333334rem;
+  transform: scale(0.9);
+  color: #565656;
+  line-height: 1rem;
+}
+.msgList .check > span > em {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0.9166666666666666rem;
+  height: 0.9166666666666666rem;
+  top: 0.08333333333333333rem;
+  left: 0.4166666666666667rem;
+  background-image: url('../images/check0.png');
+  background-repeat: no-repeat;
+  background-size: 0.9166666666666666rem 0.9166666666666666rem;
+}
+.msgList .check.ischeck > span > em {
+  background-image: url('../images/check1.png');
+}

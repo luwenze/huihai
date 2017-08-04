@@ -1,8 +1,17 @@
 mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+
+
+        //var yMday=document.getElementById('result0');//内容是后来mui生成的，所以取不到
+        var yMday='2017/12/12';
+        var time0='12:00';
+        var time1='12:00';
+        var timeGap='';
+        console.log(yMday);
         (function ($) {
             $.init();
+           
             var result0 = $('#result0')[0];
             var result1 = $('#result1')[0];
             var btns = $('.btn');
@@ -34,16 +43,19 @@ mui.init({
                         if (id === 'start') {
                             result0.innerText = rs.y.text + '年' + rs.m.text + '月' + rs.d.text +
                                 '日';
-                            interval();                              
+                            interval();   
+                            //console.log(rs.value.split('-').join('\'));
                         } else if(id==='demo5'){
                             result1.innerText = rs.h.text + ':' + rs.i.text;
                             interval();
+                            time0=rs.h.value+':'+rs.i.value;
+                            console.log(time0);
 
                         }else if(id==='demo6'){
                             result2.innerText = rs.h.text + ':' + rs.i.text;
                             interval();
-
-                            
+                            time1=rs.h.value+':'+rs.i.value;
+                            console.log(time1);
                         }
                         /* 
                          * 返回 false 可以阻止选择框的关闭
@@ -64,7 +76,7 @@ mui.init({
                     time1=new Date(date+' '+result1.innerText);
                     time2=new Date(date+' '+result2.innerText);
                     gap=time2.getTime()-time1.getTime();
-                    if(gap<0){
+                    if(gap<=0){
                         jQuery('#interval').html('结束时间必须在开始时间之后')
                                             .css('color','#d42121');
                     }else{
@@ -74,9 +86,12 @@ mui.init({
                         h=Math.floor(h);
                         if(h<1){
                             jQuery('#interval').html(m+'分钟').css('color','#555555');
+                            timeGap=m+'分钟';
                         }else{
                             jQuery('#interval').html(h+'小时'+m+'分钟').css('color','#555555');
+                            timeGap=h+'小时'+m+'分钟';
                         }
+                        console.log(timeGap);
 
                     }
                 }

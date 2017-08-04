@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="applicable-device" content="mobile">
 
-    
+
 
     <!--MUI引入-->
     <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
@@ -18,10 +18,10 @@
     <link rel="stylesheet" type="text/css" href="../../lib/mui/css/mui.picker.min.css" />
 
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../../css/base.less">
-    <link rel="stylesheet/less" href="../../css/trainAudit.less">
-    <link rel="stylesheet/less" href="../../css/trainApply.less">
-    <link rel="stylesheet/less" href="../../css/trainPlay.less">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/trainAudit.css">
+    <link rel="stylesheet" href="../../css/trainApply.css">
+    <link rel="stylesheet" href="../../css/trainPlay.css">
     <style>
         h5.mui-content-padded {
             margin-left: 0.25rem;
@@ -40,7 +40,7 @@
 
 
     <!-- 编译less文件的js -->
-    <script src="../../lib/less/less.js"></script>
+    <!--<script src="../../lib/less/less.js"></script>-->
 </head>
 
 <body>
@@ -70,37 +70,32 @@
             <span>意见反馈</span>
         </li>
     </ul>
-    <div class="main">
+    <div class="main" style="margin-bottom:0rem">
         <div class="frame">
             <div class="reminder">
                 <span>培训讲师每一场培训（或一个入园培训）生成一张表单</span><br>
             </div>
             <form class="applyForm">
-                <div class="submit">
+                <div class="submit" id="trainPlan">
                     <!--老师-->
-                    <div class="lr type">
+                    <!--本来不是site 是type-->
+                    <div class="lr site">
                         <span class="fl">培训讲师：</span>
                         <div class="right">
-                            <select>
-                                <option value="大会1">程才1</option>
-                                <option value="大会2">程才2</option>
-                            </select>
+                            <input type="" name="" value="" disabled id="trainTeacher">
                         </div>
                     </div>
 
                     <!--人数-->
-                    <div class="lr fate">
+                    <div class="lr site">
                         <span class="fl">参训人数：</span>
                         <div class="right">
-                            <select>
-                                <option value="50">50</option>
-                                <option value="60">60</option>
-                            </select>
+                            <input type="number" name="" value="" placeholder="参训人数至多为5位数" id="trainPeoNum" onkeyup="window.lu.wordLimit(this,5)">
                         </div>
                     </div>
 
                     <!--时间-->
-                    <div class="lr date">
+                    <div class="lr date" id="trainTime">
                         <span class="fl">培训日期：</span>
                         <div class="right trainTime">
                             <button id='start' data-options='{"type":"date"}' class="btn mui-btn mui-btn-block mybtn">
@@ -108,10 +103,10 @@
                             </button>
                             <span class="line"></span>
                             <button id='demo5' data-options='{"type":"time"}' class="btn mui-btn mui-btn-block mybtn">
-                                <div id='result1' class="ui-alert myalert">12:30</div>
+                                <div id='result1' class="ui-alert myalert">12:00</div>
                             </button>
                             <button id='demo6' data-options='{"type":"time"}' class="btn mui-btn mui-btn-block mybtn">
-                               	<div id='result2' class="ui-alert myalert">1:30</div>
+                               	<div id='result2' class="ui-alert myalert">12:00</div>
                             </button>
                         </div>
                     </div>
@@ -119,58 +114,57 @@
                     <!--类型-->
                     <div class="lr type">
                         <span class="fl">培训类型：</span>
-                        <div class="right">
-                            <select>
-                            <option value="大会1">大会1</option>
-                            <option value="大会2">大会2</option>
-                        </select>
+                        <div class="right triangle">
+                            <select id="trainType">
+                                <option value="1">入园</option>
+                                <option value="2">大会</option>
+                            </select>
+                            <!--<input type="" name="" value="" placeholder="哈哈" disabled id="trainType">-->
                         </div>
                     </div>
-                    
+
                     <!--天数-->
                     <div class="lr fate gap">
                         <span class="fl">培训时长：</span>
                         <div class="right" id="interval">
-                            
+
                         </div>
                     </div>
-                    
+
                     <!--区域-->
-                    <div class="lr fate area">
+                    <div class="lr fate area hide">
                         <span class="fl">培训区域：</span>
                         <div class="right">
-                            <select>
-                                <option value="50">湖北</option>
-                                <option value="60">浙江</option>
+                            <select id="province">
+                                <option value="">请选择</option>
                             </select>
                             <span class="sheng">省</span>
-                            <select>
-                                <option value="50">武汉</option>
-                                <option value="60">宜昌</option>
+                            <select id="city">
+                                <option value="">请选择</option>
                             </select>
                             <span class="shi">市</span>
-                            <select>
-                                <option value="50">江汉</option>
-                                <option value="60">江夏</option>
+                            <select id="district">
+                                <option value="">请选择</option>
                             </select>
                             <span class="qu">区</span>
                         </div>
                     </div>
 
+
+
                     <!--地点-->
                     <div class="lr site">
                         <span class="fl">培训地点：</span>
                         <div class="right">
-                            <input type="" name="" value="" placeholder="光谷世界城">
+                            <input type="" name="" value="" placeholder="最多可输入30个汉字" id="place" onkeyup="window.lu.wordLimit(this,30)">
                         </div>
                     </div>
 
-                    <!--科目-->
-                    <div class="lr object">
+                    <div class="lr object hide">
                         <span class="fl">培训科目：</span>
                         <div class="right">
                             <ul class="pitch clearfix" id="delete">
-                                <li>
+                                <!--<li>
                                     <a href="javascript:void(0)">狮王英语</a>
                                     <em></em>
                                 </li>
@@ -181,14 +175,14 @@
                                 <li>
                                     <a href="javascript:void(0)">狮王英语</a>
                                     <em></em>
-                                </li>
+                                </li>-->
                                 <li class="add">
                                     <em id="add"></em>
                                 </li>
                             </ul>
 
                             <ul class="option clearfix" id="option">
-                                <li>
+                                <!-- <li>
                                     <a href="javascript:void(0)">汇海蒙数</a>
                                 </li>
                                 <li>
@@ -199,7 +193,7 @@
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)">幼儿英语</a>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -208,15 +202,16 @@
                     <div class="lr site">
                         <span class="fl">参训单位：</span>
                         <div class="right">
-                            <input type="" name="" value="" placeholder="红太阳幼儿园">
+                            <a href="javascript:void(0);" id="againSelect">重选</a>
+                            <input type="" name="" value="" placeholder="请输入单位名称" id="companyName" onkeyup="window.lu.wordLimit(this,20)">
                         </div>
                     </div>
-                    
+
                     <!--负责人-->
                     <div class="lr site">
                         <span class="fl">负责人：</span>
                         <div class="right">
-                            <input type="" name="" value="" placeholder="李诗佳">
+                            <input type="" name="" value="" placeholder="最多可以输入5个汉字或10个英文字符" id="manager" onkeyup="window.lu.wordLimit(this,5)">
                         </div>
                     </div>
 
@@ -224,7 +219,7 @@
                     <div class="lr site">
                         <span class="fl">联系电话：</span>
                         <div class="right">
-                            <input type="" name="" value="" placeholder="11122224444">
+                            <input type="" name="" value="" placeholder="请输入手机号码" id="telephone">
                         </div>
                     </div>
 
@@ -232,13 +227,13 @@
                     <div class="lr site">
                         <span class="fl">园所规模：</span>
                         <div class="right">
-                            <input type="" name="" value="" placeholder="600人">
+                            <input type="number" name="" value="" placeholder="请输入幼儿园人数" id="peopleNumber">
                         </div>
                     </div>
-                    
-                    
-                    <button type="submit" onclick="window.location.href='../formDetails.html';return false">提交</button>
 
+
+                    <button type="submit" id="planSub" onclick="return false">提交</button>
+                    <!--window.location.href='../formDetails.html';-->
                 </div>
 
             </form>
@@ -246,6 +241,41 @@
         </div>
     </div>
 
+
+    <div class="popup" id="popup">
+        <div class="popupBox">
+            <h3>参训单位</h3>
+            <div class="popup-card">
+                <form class="mui-input-group">
+                    <ul class="mui-table-view mui-table-view-radio" id="domBox">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">
+                                Item 1
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell mui-selected">
+                            <a class="mui-navigate-right">
+                                Item 2
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">
+                                Item 3
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="radioBox" id="radioBox">
+                        <button onclick="return false;" id="use">使用</button>
+                        <button onclick="return false;" id="noUse">不使用</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+    </script>
 
 
 
@@ -258,14 +288,22 @@
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../../lib/jquery/jquery.min.js"></script>
-    <script src="../../js/trainPlay1.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/trainPlay2.js"></script>
+    <!--<script src="../../js/trainPlay1.js"></script>-->
+    <!--<script src="../../js/confirmPro.js"></script>-->
 
     <!--时间选择模块-->
     <script src="../../lib/mui/js/mui.min.js"></script>
     <script src="../../lib/mui/js/mui.picker.min.js"></script>
     <script src="../../js/trainPlay.js"></script>
-    <script src="../../js/muiCom.js"></script>
-
+    <script type="text/javascript">
+        if (document.getElementById('backTag')) {
+            document.getElementById('backTag').addEventListener('tap', function () {
+                mui.back();
+            });
+        }
+    </script>
 
     <!--培训科目选择模块-->
 

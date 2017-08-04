@@ -1,0 +1,66 @@
+.main {
+  padding: 0;
+}
+.main > .frame {
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 1rem 0 1rem;
+}
+.main > .frame > a {
+  position: relative;
+  height: 1.8rem;
+  border-radius: 0.4rem;
+  text-align: left;
+  margin-left: 0.08333333333333333rem;
+  padding-left: 1.5rem;
+  display: inline-block;
+  background-color: #04A6C1;
+  color: #fff;
+  line-height: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.main > .frame > a > em {
+  top: 0.46rem;
+  left: 0.4166666666666667rem;
+  position: absolute;
+  display: inline-block;
+  width: 0.83rem;
+  height: 0.83rem;
+  background-image: url('../images/alter1.png');
+  background-repeat: no-repeat;
+  background-size: 0.83rem 0.83rem;
+}
+.main > .frame > a > span {
+  margin-left: 0.08333333333333333rem;
+  margin-right: 0.4166666666666667rem;
+  font-size: 0.83rem;
+}
+.main > .frame > a.change {
+  background-color: #fff;
+  color: #04A6C1;
+}
+.main > .frame > a.change > em {
+  background-image: url('../images/alter2.png');
+}
+.main > .frame > p {
+  padding: 0.8333333333333334rem 0.5833333333333334rem 1.25rem 0.5833333333333334rem;
+  background-color: #F2F2F2;
+  color: #565656;
+  font-size: 0.8333333333333334rem;
+  line-height: 1.25rem;
+}
+.main > .frame > .applyForm {
+  display: block;
+}
+.main > .frame > .applyForm .submit {
+  padding-left: 0;
+}
+.main > .frame > .applyForm .submit > button {
+  margin-bottom: 2.5rem;
+  height: 2.0833333333333335rem;
+  line-height: 0.75rem;
+}
+.main > .frame > .applyForm .submit > .hide {
+  display: none;
+}

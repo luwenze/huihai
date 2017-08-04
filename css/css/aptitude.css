@@ -1,0 +1,77 @@
+.radioBox {
+  position: relative;
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  text-align: center;
+  border-top: 0.083rem solid #04A6C1;
+}
+.radioBox > input {
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  height: 0;
+}
+.radioBox > input:first-of-type {
+  top: 0;
+  left: 0;
+  color: transparent;
+}
+.radioBox > label {
+  position: absolute;
+  display: block;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  left: 50%;
+  top: 0;
+  font-size: 0.83rem;
+  color: #565656;
+  background-image: url('../images/click1.png');
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: 1rem 0.35rem;
+  padding-left: 1.25rem;
+  z-index: 20;
+}
+.radioBox > label:first-of-type {
+  margin-left: -25%;
+}
+.radioBox > label.check {
+  background-image: url('../images/click2.png');
+}
+.subArea {
+  background-color: #fff;
+  padding: 1rem 0.8rem;
+}
+.subArea > h3 {
+  width: 100%;
+  font-size: 1rem;
+  color: #565656;
+  padding-left: 0.41rem;
+}
+.subArea > p {
+  width: 100%;
+  padding: 0.33rem 0.41rem;
+  height: 8.333333333333334rem;
+  background-color: #F2F2F2;
+  color: #7C7C7C;
+  margin-top: 0.5rem;
+  font-size: 0.83rem;
+  line-height: 1.66rem;
+}
+.subArea > button,
+.subArea button:active,
+.subArea button:hover {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.6666666666666667rem;
+  margin-bottom: 2rem;
+  width: 32%;
+  font-size: 1rem;
+  height: 1.9166666666666667rem;
+  line-height: 0.75rem;
+  border: 1px solid #04A6C1;
+  background-color: #04A6C1;
+  color: #fff;
+}

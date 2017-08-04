@@ -14,15 +14,20 @@
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="../../lib/mui/css/app.css" />
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../../css/base.less">
-    <link rel="stylesheet/less" href="../../css/trainAudit.less">
-    <link rel="stylesheet/less" href="../../css/aptitude.less">
+    <link rel="stylesheet" href="../../lib/transition/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/transition/css/demo.css">
+    <link rel="stylesheet" href="../../lib/transition/css/fakeloader.css">
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/trainAudit.css">
+    <link rel="stylesheet" href="../../css/aptitude.css">
+
     <!-- 编译less文件的js -->
-    <script src="../../lib/less/less.js"></script>
+    <!--<script src="../../lib/less/less.js"></script>-->
 </head>
 
 <body>
-    
+
     <header id="header">
         <a href="javascript:void(0);" class="back" id="backTag"><img src="../../images/back-font.png" alt=""><span>返回</span></a>
         <h3>资质审核</h3>
@@ -55,50 +60,50 @@
                 <li>
                     <h3>
                         <span>申请编号：</span>
-                        <span>452221112332111232</span>
+                        <span id="applyNum"></span>
                     </h3>
                     <div class="submit">
-                        <div>
-                            <span>申请人：</span>
-                            <span>宋立</span>
+                        <div class="lr">
+                            <span class="fl">申请人：&nbsp;&nbsp;</span>
+                            <span id="realName"></span>
                         </div>
-                        <div>
-                            <span>所属区域：</span>
-                            <span>湖北武汉</span>
+                        <div class="lr">
+                            <span class="fl">所属区域：</span>
+                            <span id="cityStr"></span>
                         </div>
-                        <div>
-                            <span>联系电话：</span>
-                            <span>13975887547</span>
-                            <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
+                        <div class="lr">
+                            <span class="fl">联系电话：</span>
+                            <span id="telephone"></span>
+                            <a class="tel" href="tel:step4.telephone"><img src="../../images/icon-tel.png" alt=""></a>
                         </div>
-                        <div>
-                            <span>培训时间：</span>
-                            <span>2017年12月12日-2018年12月12日</span>
+                        <div class="lr">
+                            <span class="fl">培训时间：</span>
+                            <span><span id="beginTime"></span>-<span id="endTime"></span></span>
                         </div>
-                        <div>
-                            <span>培训天数：</span>
-                            <span>365天</span>
+                        <div class="lr">
+                            <span class="fl">培训天数：</span>
+                            <span id="days"></span>
                         </div>
-                        <div>
-                            <span>培训科目：</span>
-                            <span>幼儿英语 | 幼儿英语 | 幼儿英语</span>
+                        <div class="lr">
+                            <span class="fl">培训科目：</span>
+                            <span id="items"></span>
                         </div>
-                        <div>
-                            <span>培训类型：</span>
-                            <span>大会</span>
+                        <div class="lr">
+                            <span class="fl">培训类型：</span>
+                            <span id="type"></span>
                         </div>
                         <div class="lr">
                             <span class="fl">详细说明：</span>
-                            <div class="right">可能会说可能不会说，知道或者不知道，没可能或者有可能，不对或者对的</div>
+                            <div class="right" id="remark"></div>
                         </div>
                         <div class="time">
                             <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                            <span>2017年12月19日</span>
+                            <span id="createTime"></span>
                         </div>
                     </div>
+                    <input type="radio" name="apt" value="1" id="radio1" checked>
+                    <input type="radio" name="apt" value="2" id="radio2">
                     <div class="radioBox" id="radioBox">
-                        <input type="radio" name="apt" value="1" id="radio1" checked>
-                        <input type="radio" name="apt" value="2" id="radio2">                        
                         <label name="radio1" for="radio1" class="check">同意</label>
                         <label name="radio2" for="radio2">拒绝</label>
                     </div>
@@ -107,13 +112,12 @@
         </div>
         <div class="subArea">
             <h3>审核批注</h3>
-            <p id="showArea">
-                条件符合，同意培训
-            </p>
+            <textarea id="showArea" placeholder="条件符合，同意培训，至多输入30个字符" onkeyup="window.lu.wordLimit(this,30)"></textarea>
             <button type="submit" onclick="return false" id="subApt">提交</button>
         </div>
     </form>
-    
+
+    <div class="fakeloader"></div>
 
 
 
@@ -125,12 +129,27 @@
 
 
     <!-- 先引入jquery  Bootstrap依赖jquery-->
-    
     <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../js/common.js"></script>
     <script src="../../js/aptitude.js"></script>
-    <script src="../../lib/mui/js/mui.min.js"></script>    
-    <script src="../../js/muiCom.js"></script>
-
+    <script src="../../lib/mui/js/mui.min.js"></script>
+    <script type="text/javascript">
+        if (document.getElementById('backTag')) {
+            document.getElementById('backTag').addEventListener('tap', function () {
+                mui.back();
+            });
+        }
+    </script>
+    <script src="../../lib/transition/js/fakeloader.js"></script>
+    <script>
+        /*$(document).ready(function () {
+            $(".fakeloader").fakeLoader({
+                timeToHide: 10000,
+                bgColor: "rgba(0,0,0,0.7)",
+                spinner: "spinner6"
+            });
+        });*/
+    </script>
 
 </body>
 

@@ -18,16 +18,16 @@
 
 
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../../css/base.less">
-    <link rel="stylesheet/less" href="../../css/trainAudit.less">
-    <link rel="stylesheet/less" href="../../css/trainApply.less">
-    <link rel="stylesheet/less" href="../../css/confirmPro.less">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/trainAudit.css">
+    <link rel="stylesheet" href="../../css/trainApply.css">
+    <link rel="stylesheet" href="../../css/confirmPro.css">
 
 
 
 
     <!-- 编译less文件的js -->
-    <script src="../../lib/less/less.js"></script>
+    <!--<script src="../../lib/less/less.js"></script>-->
 </head>
 
 <body>
@@ -62,45 +62,45 @@
             <li>
                 <h3>
                     <span>申请编号：</span>
-                    <span id="applyNum">452221112332111232</span>
+                    <span id="applyNum"></span>
                 </h3>
                 <div class="submit">
-                    <div>
-                        <span>申请人：</span>
-                        <span id="realName">宋立</span>
+                    <div class="lr">
+                        <span class="fl">申请人：&nbsp;&nbsp;</span>
+                        <span id="realName"></span>
                     </div>
-                    <div>
-                        <span>所属区域：</span>
-                        <span id="cityStr">湖北武汉</span>
+                    <div class="lr">
+                        <span class="fl">所属区域：</span>
+                        <span id="cityStr"></span>
                     </div>
-                    <div>
-                        <span>联系电话：</span>
-                        <span id="telephone">13975887547</span>
-                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
+                    <div class="lr">
+                        <span class="fl">联系电话：</span>
+                        <span id="telephone"></span>
+                        <a class="tel" href="tel:step4.telephone"><img src="../../images/icon-tel.png" alt=""></a>
                     </div>
-                    <div>
-                        <span>培训时间：</span>
-                        <span><span id="beginTime">2017年12月12日</span>-<span id="endTime">2018年12月12日</span></span>
+                    <div class="lr">
+                        <span class="fl">培训时间：</span>
+                        <span><span id="beginTime"></span>-<span id="endTime"></span></span>
                     </div>
-                    <div>
-                        <span>培训天数：</span>
-                        <span id="days">365天</span>
+                    <div class="lr">
+                        <span class="fl">培训天数：</span>
+                        <span id="days"></span>
                     </div>
-                    <div>
-                        <span>培训科目：</span>
-                        <span id="items">幼儿英语 | 幼儿英语 | 幼儿英语</span>
+                    <div class="lr">
+                        <span class="fl">培训科目：</span>
+                        <span id="items"></span>
                     </div>
-                    <div>
-                        <span>培训类型：</span>
-                        <span id="type">大会</span>
+                    <div class="lr">
+                        <span class="fl">培训类型：</span>
+                        <span id="type"></span>
                     </div>
                     <div class="lr">
                         <span class="fl">详细说明：</span>
-                        <div class="right" id="remark">可能会说可能不会说，知道或者不知道，没可能或者有可能，不对或者对的</div>
+                        <div class="right" id="remark"></div>
                     </div>
                     <div class="time">
                         <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                        <span id="createTime">2017年12月19日</span>
+                        <span id="createTime"></span>
                     </div>
                 </div>
             </li>
@@ -109,22 +109,22 @@
                     <span>资质审核</span>
                 </h3>
                 <div class="submit">
-                    <div>
-                        <span>审批人：</span>
-                        <span id="realPeo">叶虎</span>
+                    <div class="lr">
+                        <span class="fl">审批人：</span>
+                        <span id="realPeo"></span>
                     </div>
-                    <div>
-                        <span>联系电话：</span>
-                        <span id="conTel">13975887547</span>
-                        <b class="tel"><img src="../../images/icon-tel.png" alt=""></b>
+                    <div class="lr">
+                        <span class="fl">联系电话：</span>
+                        <span id="conTel"></span>
+                        <a class="tel" href="tel:"><img src="../../images/icon-tel.png" alt=""></a>
                     </div>
                     <div class="lr">
                         <span class="fl">审核批注：</span>
-                        <div class="right" id="auditRemark">经过电话核对，了解申请方需求，以及初步信息。条件符合，同意培训</div>
+                        <div class="right" id="auditRemark"></div>
                     </div>
                     <div class="time">
                         <b class="alarm"><img src="../../images/icon-alarm.png" ></b>
-                        <span id="auditTime">2017年12月19日</span>
+                        <span id="auditTime"></span>
                     </div>
                 </div>
             </li>
@@ -156,16 +156,16 @@
                     </div>
                     <div class="lr hide">
                         <span class="fl">培训天数：</span>
-                        <span style="line-height:2.3rem;font-size:0.75rem;padding-left:0.15rem;" id="fate">365</span>
+                        <span style="line-height:2.3rem;font-size:0.75rem;padding-left:0.15rem;" id="fate"></span>
                     </div>
 
-                    
+
 
                     <div class="lr object hide">
                         <span class="fl">培训科目：</span>
                         <div class="right">
                             <ul class="pitch clearfix" id="delete">
-                                <li>
+                                <!--<li>
                                     <a href="javascript:void(0)">狮王英语</a>
                                     <em></em>
                                 </li>
@@ -176,14 +176,14 @@
                                 <li>
                                     <a href="javascript:void(0)">狮王英语</a>
                                     <em></em>
-                                </li>
+                                </li>-->
                                 <li class="add">
                                     <em id="add"></em>
                                 </li>
                             </ul>
 
                             <ul class="option clearfix" id="option">
-                                <li>
+                                <!--<li>
                                     <a href="javascript:void(0)">汇海蒙数</a>
                                 </li>
                                 <li>
@@ -194,45 +194,26 @@
                                 </li>
                                 <li>
                                     <a href="javascript:void(0)">幼儿英语</a>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
 
-                    <div class="lr fate area hide">
-                        <span class="fl">培训区域：</span>
-                        <div class="right">
-                            <select>
-                                <option value="50">湖北</option>
-                                <option value="60">浙江</option>
-                            </select>
-                            <span class="sheng">省</span>
-                            <select>
-                                <option value="50">武汉</option>
-                                <option value="60">宜昌</option>
-                            </select>
-                            <span class="shi">市</span>
-                            <select>
-                                <option value="50">江汉</option>
-                                <option value="60">江夏</option>
-                            </select>
-                            <span class="qu">区</span>
-                        </div>
-                    </div>
 
-                    
+
+
                     <div class="lr type hide">
                         <span class="fl">培训类型：</span>
-                        <div class="right">
-                            <select>
-                                <option value="大会1">大会1</option>
-                                <option value="大会2">大会2</option>
+                        <div class="right triangle">
+                            <select id="trainType">
+                                <option value="1">入园</option>
+                                <option value="2">大会</option>
                             </select>
                         </div>
                     </div>
                     <div class="lr type">
                         <span class="fl">培训老师：</span>
-                        <div class="right">
+                        <div class="right triangle">
                             <select id="trainTeacher">
                                 <!--<option value="程才1">程才1</option>
                                 <option value="程才2">程才2</option>-->
@@ -242,11 +223,10 @@
                     <div class="lr explain">
                         <span class="fl">备注说明：</span>
                         <div class="right">
-                            <textarea rows="" cols="" placeholder="条件符合，同意培训" id="editExplain"></textarea>
+                            <textarea rows="" cols="" placeholder="最多输入30个汉字" id="editExplain" onkeyup="window.lu.wordLimit(this,30)"></textarea>
                         </div>
                     </div>
-                    <button type="submit" onclick="window.location.href='../trainAudit.html?trainAudit=3';return false" id="subComPro">提交</button>
-
+                    <button type="submit" onclick="return false" id="subComPro">提交</button>
                 </div>
 
             </form>
@@ -266,15 +246,20 @@
     <script src="../../lib/jquery/jquery.min.js"></script>
     <!--<script src="../../js/trainPlay1.js"></script>-->
     <script src="../../js/common.js"></script>
-    <script src="../../js/trainAudit.js"></script>
+    <!--<script src="../../js/trainAudit.js"></script>-->
     <script src="../../js/confirmPro.js"></script>
 
     <!--时间选择模块-->
     <script src="../../lib/mui/js/mui.min.js"></script>
     <script src="../../lib/mui/js/mui.picker.min.js"></script>
     <script src="../../js/trainApply.js"></script>
-    <script src="../../js/muiCom.js"></script>
-
+    <script type="text/javascript">
+        if (document.getElementById('backTag')) {
+            document.getElementById('backTag').addEventListener('tap', function () {
+                mui.back();
+            });
+        }
+    </script>
 
 </body>
 

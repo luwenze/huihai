@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <a href="./trainList01.html?companyId=72281&userId=75660">01</a>
+    <a href="./trainList01.html?userId=71940&state=&companyId=71473">02</a>
+    <a href="./trainList01.html?userId=71941&state=1&companyId=71473">03</a>
+    <a href="./trainList01.html?userId=71993&state=5&companyId=71473">04</a>
+    <a href="./trainList01.html?userId=71993&state=6&companyId=71473">05</a>
+
+<!--    <p></p>
+    <textarea rows="" cols="" class="tex" placeholder="demo"></textarea>
+    <button type="submit" class="but">确定</button>-->
+
+</body>
+<script src="../lib/jquery/jquery.min.js"></script>
+<!--<script>
+    $(function () {
+        var $tex = $(".tex");
+        var $but = $(".but");
+        var ie = jQuery.support.htmlSerialize;
+        var str = 0;
+        var abcnum = 0;
+        var maxNum = 140;
+        var texts = 0;
+        var num = 0;
+        var sets = null;
+        $tex.val("");
+        //顶部的提示文字 
+        $tex.focus(function () {
+            if ($tex.val() == "") {
+                $("p").html("您还可以输入的字数<span>70</span>");
+            }
+        })
+        $tex.blur(function () {
+            if ($tex.val() == "") {
+                $("p").html("请在下面输入您的文字：");
+            }
+        })
+        //文本框字数计算和提示改变 
+        if (ie) {
+            $tex[0].oninput = changeNum;
+        } else {
+            $tex[0].onpropertychange = changeNum;
+        }
+
+        function changeNum() {
+            //汉字的个数 
+            str = ($tex.val().replace(/\w/g, "")).length;
+            //非汉字的个数 
+            abcnum = $tex.val().length - str;
+            total = str * 2 + abcnum;
+            if (str * 2 + abcnum < maxNum || str * 2 + abcnum == maxNum) {
+                $but.removeClass()
+                $but.addClass("but");
+                texts = Math.ceil((maxNum - (str * 2 + abcnum)) / 2);
+                $("p").html("您还可以输入的字数<span>" + texts + "</span>").children().css({
+                    "color": "blue"
+                });
+            } else if (str * 2 + abcnum > maxNum) {
+                $but.removeClass("")
+                $but.addClass("grey");
+                texts = Math.ceil(((str * 2 + abcnum) - maxNum) / 2);
+                $("p").html("您输入的字数超过了<span>" + texts + "</span>").children("span").css({
+                    "color": "red"
+                });
+            }
+        }
+        /*//按钮点击 
+        $but.click(function () {
+            if ($(this).is(".grey")) {
+                sets = setInterval(flash, 100);
+                $tex.addClass("textColor")
+            }
+
+            function flash() {
+                num++;
+                if (num == 4) {
+                    clearInterval(sets);
+                }
+                if (num % 2 == 1) {
+                    $tex.addClass("textColor")
+                } else {
+                    $tex.removeClass("textColor")
+                }
+            }
+        })*/
+    })
+</script>-->
+
+</html>

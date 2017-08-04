@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="applicable-device" content="mobile">
 
-    
+
 
     <!--MUI引入-->
     <link rel="stylesheet" href="../../lib/mui/css/mui.min.css">
@@ -18,9 +18,13 @@
     <link rel="stylesheet" type="text/css" href="../../lib/mui/css/mui.picker.min.css" />
 
     <!-- 再引入自己的less -->
-    <link rel="stylesheet/less" href="../../css/base.less">
-    <link rel="stylesheet/less" href="../../css/trainAudit.less">
-    <link rel="stylesheet/less" href="../../css/trainApply.less">
+    <link rel="stylesheet" href="../../lib/transition/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/transition/css/demo.css">
+    <link rel="stylesheet" href="../../lib/transition/css/fakeloader.css">
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/trainAudit.css">
+    <link rel="stylesheet" href="../../css/trainApply.css">
     <style>
         h5.mui-content-padded {
             margin-left: 0.25rem;
@@ -39,7 +43,7 @@
 
 
     <!-- 编译less文件的js -->
-    <script src="../../lib/less/less.js"></script>
+    <!--<script src="../../lib/less/less.js"></script>-->
 </head>
 
 <body>
@@ -81,13 +85,13 @@
             </div>
             <form class="applyForm" id="applyForm">
                 <div class="submit">
-                    <div class="apply">
-                        <span>申请编号：</span>
+                    <div class="apply lr">
+                        <span class="fl">申请编号：</span>
                         <span id="apNum">452221112332111232</span>
                     </div>
                     <div class="lr type">
                         <span class="fl">培训机构：</span>
-                        <div class="right">
+                        <div class="right triangle">
                             <select id="organization">
                                 <!--<option value="大会2" name="organization">幼儿园2</option>-->
                             </select>
@@ -107,7 +111,7 @@
                     </div>
                     <div class="lr">
                         <span class="fl">培训天数：</span>
-                        <span style="line-height:2.3rem;font-size:0.75rem;padding-left:0.15rem;" id="fate">365</span>
+                        <span style="line-height:2.3rem;font-size:0.75rem;padding-left:0.15rem;" id="fate"></span>
                     </div>
                     <div class="lr object">
                         <span class="fl">培训科目：</span>
@@ -122,20 +126,20 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="lr type">
                         <span class="fl">培训类型：</span>
-                        <div class="right">
+                        <div class="right triangle">
                             <select id="trainType">
-                                <option value="1" name="trainType">大会1</option>
-                                <option value="2" name="trainType">大会2</option>
+                                <option value="1" name="trainType">入园</option>
+                                <option value="2" name="trainType">大会</option>
                             </select>
                         </div>
                     </div>
                     <div class="lr explain">
                         <span class="fl">详细说明：</span>
                         <div class="right">
-                            <textarea rows="" cols="" placeholder="具体要求说明" name="explain" id="explain"></textarea>
+                            <textarea rows="" cols="" placeholder="具体要求说明，最多输入30个字符" name="explain" id="explain" onkeyup="window.lu.wordLimit(this,30)"></textarea>
                         </div>
                     </div>
                     <button onclick="return false" type="submit" id="subApply">提交</button>
@@ -145,6 +149,9 @@
         </div>
     </div>
 
+    <div class="fakeloader"></div>
+
+
     <!-- 先引入jquery  Bootstrap依赖jquery-->
     <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../js/common.js"></script>
@@ -153,10 +160,24 @@
     <script src="../../lib/mui/js/mui.min.js"></script>
     <script src="../../lib/mui/js/mui.picker.min.js"></script>
     <script src="../../js/trainApply.js"></script>
-    <script src="../../js/muiCom.js"></script>
+    <script type="text/javascript">
+        if (document.getElementById('backTag')) {
+            document.getElementById('backTag').addEventListener('tap', function () {
+                mui.back();
+            });
+        }
+    </script>
 
-
-    <!--培训科目选择模块-->
+    <script src="../../lib/transition/js/fakeloader.js"></script>
+    <script>
+       /* $(document).ready(function () {
+            $(".fakeloader").fakeLoader({
+                timeToHide: 1000,
+                bgColor: "rgba(0,0,0,0.7)",
+                spinner: "spinner6"
+            });
+        });*/
+    </script>
 
 </body>
 
